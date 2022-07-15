@@ -17,22 +17,22 @@ Home-makers can advertise the food cooked by them
        order food.
     c.They can also watch ratings & reviews given to Home-makers before ordering.
     
-4.Filter
+4.Filter:
    a.This feature will allow users(consumers) to filter on the preferences of location,
        category and type of food.
 
-5.Price and Billing
+5.Price and Billing:
    a.Website will auto generate final price according to ordered food.
    b.Website will allow users to  make payment via payment portals.
    c.Website will auto generate bill and send it to server via various mediums.
 
-6.Delivery Tracing
+6.Delivery Tracking:
    a.Delivery partner will receive address of both the parties.
    b.Delivery partner can be tracked by both the parties.
    c.Delivery partner will be able to accept or decline and make confirmations
       on receiving and delivering orders.
 
-7.Special feature
+7.Special feature:
    a.This feature will give some privelege to our consumers by allowing them to 
    make requests to home-makers to prepare particular amount of food for any
    upcoming events that consumers are organizing.
