@@ -1,0 +1,41 @@
+List of features:
+
+1.Sign up/Log in
+
+2.HOME-MAKERS PERSPECTIVE:
+Home-makers can advertise the food cooked by them
+    a.They can post picture of the food along with it's description, quantity, & cost.
+    b.They can select category of their food, i.e., veg or non-veg.
+    c.They can also select number of servings according to the quantity of food 
+       which they have prepared.
+    d.They will have separate profiles with the ratings & reviews given to them
+       by consumers.
+
+3.CONSUMERS PERSPECTIVE:
+    a.Consumers can view posts updated by Home-makers.
+    b.They have to first sign up/log in in our website only after which they can
+       order food.
+    c.They can also watch ratings & reviews given to Home-makers before ordering.
+    
+4.Filter
+   a.This feature will allow users(consumers) to filter on the preferences of location,
+       category and type of food.
+
+5.Price and Billing
+   a.Website will auto generate final price according to ordered food.
+   b.Website will allow users to  make payment via payment portals.
+   c.Website will auto generate bill and send it to server via various mediums.
+
+6.Delivery Tracing
+   a.Delivery partner will receive address of both the parties.
+   b.Delivery partner can be tracked by both the parties.
+   c.Delivery partner will be able to accept or decline and make confirmations
+      on receiving and delivering orders.
+
+7.Special feature
+   a.This feature will give some privelege to our consumers by allowing them to 
+   make requests to home-makers to prepare particular amount of food for any
+   upcoming events that consumers are organizing.
+   b.However it's totally on home-makers will to accept or deny such requests.
+ 
+
