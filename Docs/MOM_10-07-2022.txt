@@ -1,0 +1,33 @@
+discussion abt food catering project-
+no subscription.
+it will be like home food.
+multiple home makers
+choice is from whatever is available
+location
+Modules: reviews and feedback,
+              delivery,
+               items ,
+              price and billing
+              ,prior booking etc.
+types of services
+   1.fixed(item) order
+   2.booking
+   3.qunantity wise preparation 
+
+*points should be submitted in next meeting
+scope
+summery
+features
+use case diagram - roles of user
+database schema
+
+*github-public access
+push all documents
+
+*group meeting discussion-
+
+database -1.categories-items, price range 
+                2.advertisers
+actors-1.advertisers (address.list of items,quantity,requests)
+           2.customer (select item,address,payment,billing,delivery tracking,review  ratings)
+           3.delivery person(home maker address,customer address,payment portal)
