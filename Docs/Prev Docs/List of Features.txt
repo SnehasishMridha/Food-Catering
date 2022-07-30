@@ -1,6 +1,6 @@
 List of features:
 
-1.Sign up/Log in
+1.Anthentication
 
 2.HOME-MAKERS PERSPECTIVE:
 Home-makers can advertise the food cooked by them
