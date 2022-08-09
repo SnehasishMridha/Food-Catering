@@ -31,3 +31,30 @@ database -1.categories-items, price range
 actors-1.advertisers (address.list of items,quantity,requests)
            2.customer (select item,address,payment,billing,delivery tracking,review  ratings)
            3.delivery person(home maker address,customer address,payment portal)
+
+
+
+
+22-7-2022
+changes
+1 use case-          redesign
+                     add extends and includes
+2 overview-
+                add about website features
+
+3 list of features
+                 do not go flow-wise 
+
+4 database 
+              add comments over the table name
+               register and login-user_info_table
+               column name should come with table name e.g user_name for user table
+               column names should be in lower case
+              
+ points to be resubmitted in next meeting
+1.use case
+2.overview
+3.list of features
+4.database schema
+5.scope
+                
