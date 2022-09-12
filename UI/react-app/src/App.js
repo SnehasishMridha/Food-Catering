@@ -167,7 +167,7 @@ function App() {
       <div class="section-title">
       <span class="wow fadeInUp" data-wow-delay=".2s">About Us</span>
       <h1 class="wow fadeInUp" data-wow-delay=".4s">On-time Delivery and Customer Satisfaction</h1>
-      <p class="wow fadeInUp" data-wow-delay=".6s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+      <p class="wow fadeInUp" data-wow-delay=".6s">Our website allows you to select from various Home-made foods that have been posted by the Home-makers. The Home-makers get the liberty to post an advertisement of their food on our website with the number of people they can serve with the price and location that they will be serving for.</p>
       </div>
       <div class="rating-meta d-flex align-items-center wow fadeInUp" data-wow-delay=".65s">
       <h5>Rating 4.8</h5>
