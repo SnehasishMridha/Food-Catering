@@ -22,7 +22,6 @@ function App() {
       </div>
 
 
-      {/*Navigation Bar*/}
       <header class="header">
       <div class="navbar-area">
       <div class="container">
@@ -52,21 +51,29 @@ function App() {
       <li class="nav-item">
       <a class="page-scroll" href="#how">How It Works</a>
       </li>
+
       <li class="nav-item">
       <a class="page-scroll" href="#about">Login</a>
       </li>
+
       <li class="nav-item">
       <a class="page-scroll" href="#about">Register</a>
       </li>
+
+
       </ul>
       </div>
-      </nav>
-      </div>
-      </div>
-      </div>
-      </div>
-      </header>
 
+      </nav>
+
+      </div>
+      </div>
+
+      </div>
+
+      </div>
+
+      </header>
 
       {/*home*/}
       <section id="home" class="hero-section">
@@ -93,7 +100,6 @@ function App() {
       </div>
       </section>
 
-
       {/*services*/}
       <section id="services" class="service-section pt-150">
       <div class="container">
@@ -117,6 +123,7 @@ function App() {
       </div>
       </div>
       </div>
+
       <div class="col-lg-4 col-md-6">
       <div class="single-service wow fadeInUp" data-wow-delay=".2s">
       <div class="icon">
@@ -128,6 +135,7 @@ function App() {
       </div>
       </div>
       </div>
+
       <div class="col-lg-4 col-md-6">
       <div class="single-service wow fadeInUp" data-wow-delay=".2s">
       <div class="icon">
@@ -139,10 +147,11 @@ function App() {
       </div>
       </div>
       </div>
+
+
       </div>
       </div>
       </section>
-
 
       {/*about*/}
       <section id="about" class="about-section pt-150">
@@ -189,7 +198,6 @@ function App() {
       </div>
       </div>
       </section>
-
 
       {/*how*/}
       <section id="how" class="delivery-section pt-150">
@@ -276,9 +284,12 @@ function App() {
       <li>
       <a href="#about">About Us</a>
       </li>
+
       </ul>
       </div>
       </div>
+
+
       <div class="col-lg-3 col-md-6">
       <div class="footer-widget wow fadeInUp" data-wow-delay=".8s">
       <h3>Contact Us</h3>
@@ -292,13 +303,15 @@ function App() {
       <li>
       <a href="javascript:void(0)">Ride with us</a>{/*swiggy*/}
       </li>
+
       </ul>
       </div>
       </div>
+
+
       </div>
       </div>
       </footer>
-
 
       {/*Scroll To Top*/}
       <a href="#" class="scroll-top btn-hover">
