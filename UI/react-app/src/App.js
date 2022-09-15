@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
 
 
@@ -8,16 +8,17 @@ function App() {
   return (
     <div >
         <Header/>
-        <CProfile/>
-        {/*<HMProfile/>*/}
-        {/*<Routes>
-            {/*<Switch>
-                <Route path="/" element={<Home />} />
-                <Route path="/home" element={<Home />} />
-                <Route path="/sign-in" element={<Login />} />
-                <Route path="/sign-up" element={<SignUp />} />
-            {/*</Switch>
-        </Routes>*/}
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/sign-in" element={<Login />} />
+            <Route path="/sign-up" element={<SignUp />} />
+            <Route path="/Services" element={<SignUp />} />
+            <Route path="/Posting" element={<Posting />} />
+           
+            <Route path="/PostSuccess" element={<PostSuccess />} />
+            <Route path="/PostPage" element={<PostPage />} />
+        </Routes>
         <Footer/>
         <Scroll/>
     </div>
@@ -52,7 +53,7 @@ function Header()
                     </Link>
                 </li>
                 <li class="nav-item">
-                <a class="page-scroll" href="#services">Services</a>
+                <a class="page-scroll" href="#Services">Services</a>
                 </li>
                 <li class="nav-item">
                 <a class="page-scroll" href="#about">About</a>
@@ -81,6 +82,8 @@ function Header()
         </div>
     );
 }
+
+
 
 
 
@@ -137,7 +140,7 @@ function Footer()
             <h3>Contact Us</h3>
             <ul class="links">
             <li>
-            <a href="https://www.w3.org/Provider/Style/dummy.html">Help &#38; Support</a>
+            <a href="https://www.w3.org/Provider/Style/dummy.html">Help & Support</a>
             </li>
             <li>
             <a href="https://www.w3.org/Provider/Style/dummy.html">Partner with us</a>
@@ -212,6 +215,9 @@ function Services()
                 <div class="content">
                     <h3>Pure Vegetarian</h3>
                     <p>We serve pure veg dishes as per your need.</p>
+                    <li class="nav-item">
+                <Link className="nav-link" to={'/Posting'} class="main-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Home-Maker</Link>
+                </li>
                 </div>
             </div>
             </div>
@@ -338,7 +344,6 @@ function Login()
                 type="email"
                 className="form-control"
                 placeholder="Enter username or email"
-                required
                 />
             </div>
             <div className="mb-3">
@@ -347,7 +352,6 @@ function Login()
                 type="password"
                 className="form-control"
                 placeholder="Enter password"
-                required
                 />
             </div>
             <div className="mb-3">
@@ -398,28 +402,28 @@ function SignUp()
                 </label>
             </div><br/>
             <div className="mb-3">
-                <label>First name *</label>
-                <input type="text" className="form-control" placeholder="First name" required />
+                <label>First name</label>
+                <input type="text" className="form-control" placeholder="First name" />
             </div>
             <div className="mb-3">
-                <label>Last name *</label>
-                <input type="text" className="form-control" placeholder="Last name" required />
+                <label>Last name</label>
+                <input type="text" className="form-control" placeholder="Last name" />
             </div>
             <div className="mb-3">
-                <label>Mobile number (10 digits only) *</label>
-                <input type="number" className="form-control" placeholder="+91-**********" min="7000000000" max="9999999999" required />
+                <label>Mobile number (10 digits only)</label>
+                <input type="number" className="form-control" placeholder="+91-**********" min="7000000000" max="9999999999" />
             </div>
             <div className="mb-3">
-                <label>Username *</label>
-                <input type="text" className="form-control" placeholder="Enter username" required />
+                <label>Username</label>
+                <input type="text" className="form-control" placeholder="Enter username" />
             </div>
             <div className="mb-3">
-                <label>Email ID *</label>
-                <input type="email" className="form-control" placeholder="Enter email id" required />
+                <label>Email ID</label>
+                <input type="email" className="form-control" placeholder="Enter email id" />
             </div>
             <div className="mb-3">
-                <label>Password *</label>
-                <input type="password" className="form-control" placeholder="Enter password" required />
+                <label>Password</label>
+                <input type="password" className="form-control" placeholder="Enter password" />
             </div>
             <div className="mb-3">
                 <label>Address</label>
@@ -429,7 +433,6 @@ function SignUp()
                 <label>PIN code</label>
                 <input type="number" className="form-control" placeholder="Enter PIN code" min="100000" max="9999999" />
             </div>
-            <div className="mb-3"><small>Fields marked with * are mandatory</small></div>
             <div className="d-grid">
                 <button type="submit" className="btn btn-primary">
                 Sign Up
@@ -444,128 +447,122 @@ function SignUp()
   );
 }
 
-
-// Home-maker User Profile
-function HMProfile() 
+//Homemaker posting
+function Posting()
 {
     return (
-      <div className="auth-wrapper">
-      <div className="auth-inner">
-        <form>
-            <h3>Home-maker User Profile</h3>
-            <div className="mb-3 d-grid">
-                <button type="submit" className="form-control btn btn-primary">
-                Create Consumer Profile / Import data from Consumer Profile
-                </button>
-            </div>
-            <div className="mb-3">
-                <label>First name</label>
-                <input type="text" className="form-control" placeholder="first name from database" required />
-            </div>
-            <div className="mb-3">
-                <label>Last name</label>
-                <input type="text" className="form-control" placeholder="Last name from database" required />
-            </div>
-            <div className="mb-3">
-                <label>Mobile number (10 digits only)</label>
-                <input type="number" className="form-control" placeholder="+91-********** from database" min="7000000000" max="9999999999" required />
-            </div>
-            <div className="mb-3">
-                <label>Username</label>
-                <input type="text" className="form-control" placeholder="username from database" required />
-            </div>
-            <div className="mb-3">
-                <label>Email ID</label>
-                <input type="email" className="form-control" placeholder="email id from database" required />
-            </div>
-            <div className="mb-3">
-                <label>Password</label>
-                <input type="password" className="form-control" placeholder="password from database" required />
-            </div>
-            <div className="mb-3">
-                <label>Address </label>
-                <small> (max. 255 chars)</small>
-                <textarea class="form-control" id="exampleFormControlTextarea" rows="3" required></textarea>
-            </div>
-            <div className="mb-3">
-                <label>PIN code</label>
-                <input type="number" className="form-control" placeholder="PIN code from database" min="100000" max="9999999" />
-            </div>
-            <div class="mb-3">
-                <label for="formFile" className="form-label">Upload your photo</label>
-                <input className="form-control" type="file" id="formFile" />
-            </div>
-            <div className="d-grid">
-                <button type="submit" className="btn btn-primary">
-                Save &#38; Update
-                </button>
-            </div>
-        </form>
-      </div>
-      </div>
-  );
+        <div className="auth-wrapper">
+        <div className="auth-inner">
+          <form>
+              <h3>Make your Post here</h3>
+              <h4>Please Upload Images</h4>
+              <div class="input-group mb-3">
+                <input type="file" class="form-control" id="inputGroupFile02"/>
+                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                </div>
+           
+              <div className="mb-3">
+                  <label>Name of the Food:</label>
+                  <input type="text" className="form-control" placeholder="Food name" />
+              </div>
+              <div className="mb-3">
+                  <label>Description of Food:</label>
+                  <input type="text" className="form-control" placeholder="Description" />
+              </div>
+              <div className="mb-3">
+                  <label>Category of Food</label>
+                  
+                  <div>
+                  <input type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+                  <label for="flexRadioDefault1">
+                  Vegetarian
+                  </label>
+              </div>
+              <div>
+                  <input type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                  <label for="flexRadioDefault2">
+                   Non-Vegetarian
+                  </label>
+              </div>
+              </div>
+              <div className="mb-3">
+                  <label>Food Price</label>
+                  <input type="email" className="form-control" placeholder="Enter in Rupees" />
+              </div>
+              <div className="mb-3">
+                  <label>Unit of Serves:</label>
+                  <input type="password" className="form-control" placeholder="Enter in Numbers" />
+              </div>
+              <div className="mb-3">
+                  <label>Quantity of One Serve:</label>
+                  <input type="text" className="form-control" placeholder="In Grams" />
+              </div>
+             
+              <div className="d-grid">
+              <li class="nav-item">
+                <Link className="nav-link" to={'/PostSuccess'} class="main-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Submit</Link>
+                </li>
+              </div>
+          </form>
+        </div>
+        </div>
+
+);
+
 }
 
 
-// Consumer User Profile
-function CProfile() 
+
+
+//Post success
+function PostSuccess()
 {
     return (
-      <div className="auth-wrapper">
-      <div className="auth-inner">
-        <form>
-            <h3>Consumer User Profile</h3>
-            <div className="mb-3 d-grid">
-                <button type="submit" className="form-control btn btn-primary">
-                Create Home-maker Profile  / Import data from Home-maker Profile
-                </button>
-            </div>
-            <div className="mb-3">
-                <label>First name</label>
-                <input type="text" className="form-control" placeholder="first name from database" required />
-            </div>
-            <div className="mb-3">
-                <label>Last name</label>
-                <input type="text" className="form-control" placeholder="Last name from database" required />
-            </div>
-            <div className="mb-3">
-                <label>Mobile number (10 digits only)</label>
-                <input type="number" className="form-control" placeholder="+91-********** from database" min="7000000000" max="9999999999" required />
-            </div>
-            <div className="mb-3">
-                <label>Username</label>
-                <input type="text" className="form-control" placeholder="username from database" required />
-            </div>
-            <div className="mb-3">
-                <label>Email ID</label>
-                <input type="email" className="form-control" placeholder="email id from database" required />
-            </div>
-            <div className="mb-3">
-                <label>Password</label>
-                <input type="password" className="form-control" placeholder="password from database" required />
-            </div>
-            <div className="mb-3">
-                <label>Address </label>
-                <small> (max. 255 chars)</small>
-                <textarea class="form-control" id="exampleFormControlTextarea" rows="3" required></textarea>
-            </div>
-            <div className="mb-3">
-                <label>PIN code</label>
-                <input type="number" className="form-control" placeholder="PIN code from database" min="100000" max="9999999" />
-            </div>
-            <div class="mb-3">
-                <label for="formFile" className="form-label">Upload your photo</label>
-                <input className="form-control" type="file" id="formFile" />
-            </div>
-            <div className="d-grid">
-                <button type="submit" className="btn btn-primary">
-                Save &#38; Update
-                </button>
-            </div>
-        </form>
-      </div>
-      </div>
-  );
+        <div className="auth-wrapper">
+        <div className="auth-inner">
+         
+        <h3>Posted Successfully</h3>
+        <div className="d-grid">
+              <li class="nav-item">
+                <Link className="nav-link" to={'/PostPage'} class="main-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Take Me to My Post</Link>
+                </li>
+              </div>
+        </div>
+        </div>
+
+);
+
+}
+
+//Post Page
+function PostPage()
+{
+    return(
+        <div>
+          <section id="home" class="hero-section">
+              <div class="hero-shape">
+                  <img src="assets/img/hero/hero-shape.svg" alt="" class="shape" />
+              </div>
+              <div class="container">
+              <div class="row align-items-center">
+              <div class="col-lg-6">
+                  <div class="hero-content">
+                      <h1 class="wow fadeInUp" data-wow-delay=".2s">See Your Post here </h1>
+                      <div className="d-grid">
+              <li class="nav-item">
+                <Link className="nav-link" to={'/Posting'} class="main-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Edit Post</Link> <a  class="main-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Delete Post</a>
+                </li>
+              </div>
+                  </div>
+              </div>
+
+              
+              </div>
+              </div>
+          </section>
+        </div>
+      );
+
 }
 
 
@@ -577,6 +574,8 @@ function Scroll()
       </a>
     );
 }
+
+
 
 
 export default App;
