@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link, Switch } from 'react-router-dom'
 
 
 
@@ -8,12 +8,16 @@ function App() {
   return (
     <div >
         <Header/>
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/sign-in" element={<Login />} />
-            <Route path="/sign-up" element={<SignUp />} />
-        </Routes>
+        <CProfile/>
+        {/*<HMProfile/>*/}
+        {/*<Routes>
+            {/*<Switch>
+                <Route path="/" element={<Home />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="/sign-in" element={<Login />} />
+                <Route path="/sign-up" element={<SignUp />} />
+            {/*</Switch>
+        </Routes>*/}
         <Footer/>
         <Scroll/>
     </div>
@@ -82,8 +86,6 @@ function Header()
 
 
 
-
-
 // Footer
 function Footer()
 {
@@ -135,7 +137,7 @@ function Footer()
             <h3>Contact Us</h3>
             <ul class="links">
             <li>
-            <a href="https://www.w3.org/Provider/Style/dummy.html">Help & Support</a>
+            <a href="https://www.w3.org/Provider/Style/dummy.html">Help &#38; Support</a>
             </li>
             <li>
             <a href="https://www.w3.org/Provider/Style/dummy.html">Partner with us</a>
@@ -336,6 +338,7 @@ function Login()
                 type="email"
                 className="form-control"
                 placeholder="Enter username or email"
+                required
                 />
             </div>
             <div className="mb-3">
@@ -344,6 +347,7 @@ function Login()
                 type="password"
                 className="form-control"
                 placeholder="Enter password"
+                required
                 />
             </div>
             <div className="mb-3">
@@ -394,28 +398,28 @@ function SignUp()
                 </label>
             </div><br/>
             <div className="mb-3">
-                <label>First name</label>
-                <input type="text" className="form-control" placeholder="First name" />
+                <label>First name *</label>
+                <input type="text" className="form-control" placeholder="First name" required />
             </div>
             <div className="mb-3">
-                <label>Last name</label>
-                <input type="text" className="form-control" placeholder="Last name" />
+                <label>Last name *</label>
+                <input type="text" className="form-control" placeholder="Last name" required />
             </div>
             <div className="mb-3">
-                <label>Mobile number (10 digits only)</label>
-                <input type="number" className="form-control" placeholder="+91-**********" min="7000000000" max="9999999999" />
+                <label>Mobile number (10 digits only) *</label>
+                <input type="number" className="form-control" placeholder="+91-**********" min="7000000000" max="9999999999" required />
             </div>
             <div className="mb-3">
-                <label>Username</label>
-                <input type="text" className="form-control" placeholder="Enter username" />
+                <label>Username *</label>
+                <input type="text" className="form-control" placeholder="Enter username" required />
             </div>
             <div className="mb-3">
-                <label>Email ID</label>
-                <input type="email" className="form-control" placeholder="Enter email id" />
+                <label>Email ID *</label>
+                <input type="email" className="form-control" placeholder="Enter email id" required />
             </div>
             <div className="mb-3">
-                <label>Password</label>
-                <input type="password" className="form-control" placeholder="Enter password" />
+                <label>Password *</label>
+                <input type="password" className="form-control" placeholder="Enter password" required />
             </div>
             <div className="mb-3">
                 <label>Address</label>
@@ -425,6 +429,7 @@ function SignUp()
                 <label>PIN code</label>
                 <input type="number" className="form-control" placeholder="Enter PIN code" min="100000" max="9999999" />
             </div>
+            <div className="mb-3"><small>Fields marked with * are mandatory</small></div>
             <div className="d-grid">
                 <button type="submit" className="btn btn-primary">
                 Sign Up
@@ -440,6 +445,129 @@ function SignUp()
 }
 
 
+// Home-maker User Profile
+function HMProfile() 
+{
+    return (
+      <div className="auth-wrapper">
+      <div className="auth-inner">
+        <form>
+            <h3>Home-maker User Profile</h3>
+            <div className="mb-3 d-grid">
+                <button type="submit" className="form-control btn btn-primary">
+                Create Consumer Profile / Import data from Consumer Profile
+                </button>
+            </div>
+            <div className="mb-3">
+                <label>First name</label>
+                <input type="text" className="form-control" placeholder="first name from database" required />
+            </div>
+            <div className="mb-3">
+                <label>Last name</label>
+                <input type="text" className="form-control" placeholder="Last name from database" required />
+            </div>
+            <div className="mb-3">
+                <label>Mobile number (10 digits only)</label>
+                <input type="number" className="form-control" placeholder="+91-********** from database" min="7000000000" max="9999999999" required />
+            </div>
+            <div className="mb-3">
+                <label>Username</label>
+                <input type="text" className="form-control" placeholder="username from database" required />
+            </div>
+            <div className="mb-3">
+                <label>Email ID</label>
+                <input type="email" className="form-control" placeholder="email id from database" required />
+            </div>
+            <div className="mb-3">
+                <label>Password</label>
+                <input type="password" className="form-control" placeholder="password from database" required />
+            </div>
+            <div className="mb-3">
+                <label>Address </label>
+                <small> (max. 255 chars)</small>
+                <textarea class="form-control" id="exampleFormControlTextarea" rows="3" required></textarea>
+            </div>
+            <div className="mb-3">
+                <label>PIN code</label>
+                <input type="number" className="form-control" placeholder="PIN code from database" min="100000" max="9999999" />
+            </div>
+            <div class="mb-3">
+                <label for="formFile" className="form-label">Upload your photo</label>
+                <input className="form-control" type="file" id="formFile" />
+            </div>
+            <div className="d-grid">
+                <button type="submit" className="btn btn-primary">
+                Save &#38; Update
+                </button>
+            </div>
+        </form>
+      </div>
+      </div>
+  );
+}
+
+
+// Consumer User Profile
+function CProfile() 
+{
+    return (
+      <div className="auth-wrapper">
+      <div className="auth-inner">
+        <form>
+            <h3>Consumer User Profile</h3>
+            <div className="mb-3 d-grid">
+                <button type="submit" className="form-control btn btn-primary">
+                Create Home-maker Profile  / Import data from Home-maker Profile
+                </button>
+            </div>
+            <div className="mb-3">
+                <label>First name</label>
+                <input type="text" className="form-control" placeholder="first name from database" required />
+            </div>
+            <div className="mb-3">
+                <label>Last name</label>
+                <input type="text" className="form-control" placeholder="Last name from database" required />
+            </div>
+            <div className="mb-3">
+                <label>Mobile number (10 digits only)</label>
+                <input type="number" className="form-control" placeholder="+91-********** from database" min="7000000000" max="9999999999" required />
+            </div>
+            <div className="mb-3">
+                <label>Username</label>
+                <input type="text" className="form-control" placeholder="username from database" required />
+            </div>
+            <div className="mb-3">
+                <label>Email ID</label>
+                <input type="email" className="form-control" placeholder="email id from database" required />
+            </div>
+            <div className="mb-3">
+                <label>Password</label>
+                <input type="password" className="form-control" placeholder="password from database" required />
+            </div>
+            <div className="mb-3">
+                <label>Address </label>
+                <small> (max. 255 chars)</small>
+                <textarea class="form-control" id="exampleFormControlTextarea" rows="3" required></textarea>
+            </div>
+            <div className="mb-3">
+                <label>PIN code</label>
+                <input type="number" className="form-control" placeholder="PIN code from database" min="100000" max="9999999" />
+            </div>
+            <div class="mb-3">
+                <label for="formFile" className="form-label">Upload your photo</label>
+                <input className="form-control" type="file" id="formFile" />
+            </div>
+            <div className="d-grid">
+                <button type="submit" className="btn btn-primary">
+                Save &#38; Update
+                </button>
+            </div>
+        </form>
+      </div>
+      </div>
+  );
+}
+
 
 function Scroll()
 {
@@ -449,8 +577,6 @@ function Scroll()
       </a>
     );
 }
-
-
 
 
 export default App;
