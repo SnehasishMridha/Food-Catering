@@ -4,14 +4,18 @@ import { BrowserRouter as Router, Routes, Route, Link, Switch } from 'react-rout
 
 
 
-function App() {
+const App = () => {
   return (
     <div >
-       <Header/>
-         {/*<CProfile/>
-        <HMProfile/>*/}
-        <Routes>
-            {/*<Switch>*/}
+        <Header/>
+        {/*<SearchBox/>*/}
+        <FoodList/>
+        {/*<OrderHistory/>*/}
+        {/*<Home />*/}
+        {/*<CProfile/>*/}
+        {/*<HMProfile/>*/}
+        {/*<Routes>
+            {/*<Switch>
                 <Route path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/sign-in" element={<Login />} />
@@ -19,8 +23,8 @@ function App() {
                 <Route path="/Posting" element={<Posting />} />
                 <Route path="/PostSuccess" element={<PostSuccess />} />
                 <Route path="/PostPage" element={<PostPage />} />
-            {/*</Switch>*/}
-        </Routes>
+            {/*</Switch>
+        </Routes>*/}
         <Footer/>
         <Scroll/>
     </div>
@@ -28,7 +32,7 @@ function App() {
 }
 
 // Header Home
-function Header()
+const Header = () =>
 {
     return(
         <div className="App">
@@ -50,6 +54,7 @@ function Header()
                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                 <ul id="nav" class="navbar-nav ml-auto">
                 <li class="nav-item">
+                {/*<a class="page-scroll" href="#home">Home</a>*/}
                     <Link className="nav-link" to={'/home'}>{/*home*/}
                     Home
                     </Link>
@@ -64,11 +69,13 @@ function Header()
                 <a class="page-scroll" href="#how">How It Works</a>
                 </li>
                 <li class="nav-item">
+                {/*<a class="page-scroll" href="#about">Login</a>*/}
                     <Link className="nav-link" to={'/sign-in'}>
                     Login
                     </Link>
                 </li>
                 <li class="nav-item">
+                {/*<a class="page-scroll" href="#about">Sign up</a>*/}
                     <Link className="nav-link" to={'/sign-up'}>
                     Sign up
                     </Link>
@@ -87,10 +94,62 @@ function Header()
 
 
 
+// Header Login
+const Header2 = () =>
+{
+    return(
+        <div className="App">
+            <header class="header">
+                <div class="navbar-area">
+                <div class="container">
+                <div class="row align-items-center">
+                <div class="col-lg-12">
+                <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#">{/*Home*/}
+                <img src="assets/img/logo/logo.jpg" alt="Logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                </button>
+                {/*Navigation Bar*/}
+                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                <ul id="nav" class="navbar-nav ml-auto">
+                <li class="nav-item">
+                {/*<a class="page-scroll" href="#home">Home</a>*/}
+                    <Link className="nav-link" to={'/home'}>{/*home*/}
+                    Home
+                    </Link>
+                </li>
+                <li class="nav-item">
+                {/*<a class="page-scroll" href="#about">Login</a>*/}
+                    <Link className="nav-link" to={'/sign-in'}>
+                    Login
+                    </Link>
+                </li>
+                <li class="nav-item">
+                {/*<a class="page-scroll" href="#about">Sign up</a>*/}
+                    <Link className="nav-link" to={'/sign-up'}>
+                    Sign up
+                    </Link>
+                </li>
+                </ul>
+                </div>
+                </nav>
+                </div>
+                </div>
+                </div>
+                </div>
+            </header>
+        </div>
+    );
+}
+
 
 
 // Footer
-function Footer()
+const Footer = () =>
 {
     return(
         <footer id="footer" class="footer pt-100 pb-70">
@@ -122,6 +181,7 @@ function Footer()
                     <h3>About Us</h3>
                     <ul class="links">
                         <li>
+                            {/*<a href="#home">Home</a>*/}
                             <Link to={'/home'}>{/*home*/}
                             Home
                             </Link>
@@ -157,8 +217,21 @@ function Footer()
     );
 }
 
+
+
+const Scroll = () =>
+{
+    return(
+      <a href="#" class="scroll-top btn-hover">
+      <i class="lni lni-chevron-up"></i>
+      </a>
+    );
+}
+
+
+
 // Home page
-function Home()
+const Home = () =>
 {
     return(
       <div>
@@ -193,7 +266,7 @@ function Home()
 }
 
 // Services
-function Services()
+const Services = () =>
 {
     return(
         <section id="services" class="service-section pt-150">
@@ -215,9 +288,6 @@ function Services()
                 <div class="content">
                     <h3>Pure Vegetarian</h3>
                     <p>We serve pure veg dishes as per your need.</p>
-                    <li class="nav-item">
-                <Link className="nav-link" to={'/Posting'} class="main-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Home-Maker</Link>
-                </li>
                 </div>
             </div>
             </div>
@@ -250,7 +320,7 @@ function Services()
 }
 
 // About us
-function About()
+const About = () =>
 {
     return(
         <section id="about" class="about-section pt-150">
@@ -300,9 +370,8 @@ function About()
     );
 }
 
-
 // How It Works
-function How()
+const How = () =>
 {
     return(
         <section id="how" class="delivery-section pt-150">
@@ -330,9 +399,16 @@ function How()
 }
 
 
+const Auth = () =>
+{
+  return (
+<Header2/>
+
+  );
+}
 
 // Login Form
-function Login() 
+const Login = () => 
 {
     return (
       <div className="auth-wrapper">
@@ -370,7 +446,7 @@ function Login()
                 </div>
             </div>
                 <div className="d-grid">
-                    <button type="submit" className="btn btn-primary">
+                    <button type="submit" className="main-btn-2 "> {/*btn btn-primary*/}
                     Submit
                     </button>
                 </div>
@@ -380,12 +456,12 @@ function Login()
         </form>
       </div>
       </div>
-  )
+  );
 }
 
 
 // Sign up
-function SignUp() 
+const SignUp = () =>
 {
     return (
       <div className="auth-wrapper">
@@ -399,7 +475,7 @@ function SignUp()
                 </label>
             </div>
             <div>
-                <input type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                <input type="radio" name="flexRadioDefault" id="flexRadioDefault2" /*checked*//>
                 <label for="flexRadioDefault2">
                  Consumer
                 </label>
@@ -438,7 +514,7 @@ function SignUp()
             </div>
             <div className="mb-3"><small>Fields marked with * are mandatory</small></div>
             <div className="d-grid">
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="main-btn-2">{/*btn btn-primary*/}
                 Sign Up
                 </button>
             </div>
@@ -453,7 +529,7 @@ function SignUp()
 
 
 // Home-maker User Profile
-function HMProfile() 
+const HMProfile = () =>
 {
     return (
       <div className="auth-wrapper">
@@ -461,10 +537,22 @@ function HMProfile()
         <form>
             <h3>Home-maker User Profile</h3>
             <div className="mb-3 d-grid">
-                <button type="submit" className="form-control btn btn-primary">
+                <button type="submit" className="main-btn-2 form-control ">{/*btn btn-primary*/}
                 Create Consumer Profile / Import data from Consumer Profile
                 </button>
             </div>
+            {/*<div>
+                <input type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+                <label for="flexRadioDefault1">
+                 Home maker
+                </label>
+            </div>
+            <div>
+                <input type="radio" name="flexRadioDefault" id="flexRadioDefault2" /> {/*checked
+                <label for="flexRadioDefault2">
+                 Consumer
+                </label>
+            </div><br/>*/}
             <div className="mb-3">
                 <label>First name</label>
                 <input type="text" className="form-control" placeholder="first name from database" required />
@@ -492,6 +580,7 @@ function HMProfile()
             <div className="mb-3">
                 <label>Address </label>
                 <small> (max. 255 chars)</small>
+                {/*<input type="text" className="form-control" placeholder="Enter complete address" />*/}
                 <textarea class="form-control" id="exampleFormControlTextarea" rows="3" required></textarea>
             </div>
             <div className="mb-3">
@@ -502,11 +591,15 @@ function HMProfile()
                 <label for="formFile" className="form-label">Upload your photo</label>
                 <input className="form-control" type="file" id="formFile" />
             </div>
+            {/*<div className="mb-3"><small>Fields marked with * are mandatory</small></div>*/}
             <div className="d-grid">
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="main-btn-2">{/*btn btn-primary*/}
                 Save &#38; Update
                 </button>
             </div>
+            {/*<p className="forgot-password text-right">
+            Already registered <a href="/sign-in">sign in?</a>
+        </p>*/}
         </form>
       </div>
       </div>
@@ -515,7 +608,7 @@ function HMProfile()
 
 
 // Consumer User Profile
-function CProfile() 
+const CProfile = () =>
 {
     return (
       <div className="auth-wrapper">
@@ -523,10 +616,22 @@ function CProfile()
         <form>
             <h3>Consumer User Profile</h3>
             <div className="mb-3 d-grid">
-                <button type="submit" className="form-control btn btn-primary">
+                <button type="submit" className="main-btn-2 form-control ">{/*btn btn-primary*/}
                 Create Home-maker Profile  / Import data from Home-maker Profile
                 </button>
             </div>
+            {/*<div>
+                <input type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+                <label for="flexRadioDefault1">
+                 Home maker
+                </label>
+            </div>
+            <div>
+                <input type="radio" name="flexRadioDefault" id="flexRadioDefault2" /> {/*checked
+                <label for="flexRadioDefault2">
+                 Consumer
+                </label>
+            </div><br/>*/}
             <div className="mb-3">
                 <label>First name</label>
                 <input type="text" className="form-control" placeholder="first name from database" required />
@@ -554,6 +659,7 @@ function CProfile()
             <div className="mb-3">
                 <label>Address </label>
                 <small> (max. 255 chars)</small>
+                {/*<input type="text" className="form-control" placeholder="Enter complete address" />*/}
                 <textarea class="form-control" id="exampleFormControlTextarea" rows="3" required></textarea>
             </div>
             <div className="mb-3">
@@ -564,16 +670,21 @@ function CProfile()
                 <label for="formFile" className="form-label">Upload your photo</label>
                 <input className="form-control" type="file" id="formFile" />
             </div>
+            {/*<div className="mb-3"><small>Fields marked with * are mandatory</small></div>*/}
             <div className="d-grid">
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="main-btn-2 ">{/*btn btn-primary*/}
                 Save &#38; Update
                 </button>
             </div>
+            {/*<p className="forgot-password text-right">
+            Already registered <a href="/sign-in">sign in?</a>
+        </p>*/}
         </form>
       </div>
       </div>
   );
 }
+
 
 {/*review and rating*/}
 function Review()
@@ -736,14 +847,236 @@ function PostPage()
 
 }
 
-function Scroll()
+
+
+const SearchBox = () =>
 {
     return(
-      <a href="#" class="scroll-top btn-hover">
-      <i class="lni lni-chevron-up"></i>
-      </a>
+        <>
+
+
+            <div class="container">
+<div className="row">
+    <div className="col-lg-12 card-margin">
+        <div className="card search-form">
+            <div className="card-body p-0">
+                <form id="search-form">
+                    <div className="row">
+                        <div className="col-12">
+                            <div className="row no-gutters">
+                                <div className="col-lg-3 col-md-3 col-sm-12 p-0">
+                                    <select className="form-control" id="exampleFormControlSelect1">
+                                        <option>Mumbai</option>
+                                        <option>Pune</option>
+                                        <option>Karad</option>
+                                        <option>Jalgaon</option>
+                                        <option>Nasik</option>
+                                        <option>Ahmedabad</option>
+                                        <option>Satara</option>
+                                        <option>Delhi</option>
+                                        <option>Kolkata</option>
+                                        <option>Hyderabad</option>
+                                        <option>Chennai</option>
+                                        <option>Panjim</option>
+                                        <option>Bangalore</option>
+                                        <option>Thiruvananthapuram</option>
+                                        <option>Bhopal</option>
+                                        <option>Bhubaneswar</option>
+                                        <option>Noida</option>
+                                        <option>Chandigarh</option>
+                                        <option>Jaipur</option>
+                                        <option>Lucknow</option>
+                                    </select>
+                                </div>
+                                <div className="col-lg-8 col-md-6 col-sm-12 p-0">
+                                    <input type="text" placeholder="Search..." className="form-control" id="search" name="search"/>
+                                </div>
+                                <div className="col-lg-1 col-md-3 col-sm-12 p-0">
+                                    <button type="submit" className="main-btn-2 ">{/*btn btn-base btn btn-primary*/}
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+
+        </>
+    )
+}
+
+
+const FoodList = () =>
+{
+    return(
+
+<>
+
+<div className="auth-wrapper">
+      <div className="auth-inner">
+
+        <SearchBox/>
+
+      <div class="row container">
+<div class="row-2">
+  <div class="column">
+    <div class="card">
+    <img src="assets\img\post\samosa.jpg" className="card-img-top" alt="samosa" />
+    <h4 class="card-title">samosa</h4>
+      <p>Some text</p>
+      <a href="https://play.google.com/store/apps" class="main-btn-2">View</a>
+    </div>
+  </div>
+  
+  <div className="column">
+    <div className="card">
+    <img src="assets\img\post\palak.jpg" className="card-img-top" alt="palak" />
+      <h4 class="card-title">palak-paneer</h4>
+      <p>Some text</p>
+      <a href="https://play.google.com/store/apps" class="main-btn-2">View</a>
+    </div>
+  </div>
+
+  <div className="column">
+    <div className="card">
+    <img src="assets\img\post\biryani.jpg" className="card-img-top" alt="biryani" />
+      <h4 class="card-title">biryani</h4>
+      <p>Some text</p>
+      <a href="https://play.google.com/store/apps" class="main-btn-2">View</a>
+    </div>
+  </div>
+
+  
+  <div className="column">
+    <div className="card">
+    <img src="assets\img\post\noodles.jpg" className="card-img-top" alt="noodles" />
+      <h4 class="card-title">noodles</h4>
+      <p>Some text</p>
+      <a href="https://play.google.com/store/apps" class="main-btn-2">View</a>
+    </div>
+  </div>
+  </div>
+
+  <div className="row-2">
+
+  <div className="column">
+    <div className="card">
+    <img src="assets\img\post\roti-sabji.jpg" className="card-img-top" alt="roti-sabji" />
+      <h4 class="card-title">roti-sabji</h4>
+      <p>Some text</p>
+      <a href="https://play.google.com/store/apps" class="main-btn-2">View</a>
+    </div>
+  </div>
+
+  
+  <div className="column">
+    <div className="card">
+    <img src="assets\img\post\dosa.jpg" className="card-img-top" alt="dosa" />
+      <h4 class="card-title">dosa</h4>
+      <p>Some text</p>
+      <a href="https://play.google.com/store/apps" class="main-btn-2">View</a>
+    </div>
+  </div>
+
+  
+  <div className="column">
+    <div className="card">
+    <img src="assets\img\post\idli.jpg" className="card-img-top" alt="idli" />
+      <h4 class="card-title">idli</h4>
+      <p>Some text</p>
+      <a href="https://play.google.com/store/apps" class="main-btn-2">View</a>
+    </div>
+  </div>
+
+
+  <div className="column">
+    <div className="card">
+    <img src="assets\img\post\pav-bhaji.jpg" className="card-img-top" alt="pav-bhaji" />
+      <h4 class="card-title">pav-bhaji</h4>
+      <p>Some text</p>
+      <a href="https://play.google.com/store/apps" class="main-btn-2">View</a>
+    </div>
+  </div>
+
+  </div>
+
+</div>
+</div>
+</div>
+</>
     );
 }
 
 
+
+
+
+const OrderHistory = () =>
+{
+    return(
+
+<>
+
+<div className="auth-wrapper">
+      <div className="auth-inner">
+
+        <h2> OrderHistory </h2>
+
+      <div class="row container">
+<div class="row-2">
+  <div class="column">
+    <div class="card">
+    <img src="assets\img\post\samosa.jpg" className="card-img-top" alt="samosa" />
+    <h4 class="card-title">samosa</h4>
+      <p>Some text</p>
+      <a href="https://play.google.com/store/apps" class="main-btn-2">View</a>
+    </div>
+  </div>
+  
+  <div className="column">
+    <div className="card">
+    <img src="assets\img\post\palak.jpg" className="card-img-top" alt="palak" />
+      <h4 class="card-title">palak-paneer</h4>
+      <p>Some text</p>
+      <a href="https://play.google.com/store/apps" class="main-btn-2">View</a>
+    </div>
+  </div>
+
+  <div className="column">
+    <div className="card">
+    <img src="assets\img\post\biryani.jpg" className="card-img-top" alt="biryani" />
+      <h4 class="card-title">biryani</h4>
+      <p>Some text</p>
+      <a href="https://play.google.com/store/apps" class="main-btn-2">View</a>
+    </div>
+  </div>
+
+  
+  <div className="column">
+    <div className="card">
+    <img src="assets\img\post\noodles.jpg" className="card-img-top" alt="noodles" />
+      <h4 class="card-title">noodles</h4>
+      <p>Some text</p>
+      <a href="https://play.google.com/store/apps" class="main-btn-2">View</a>
+    </div>
+  </div>
+  </div>
+
+
+
+</div>
+</div>
+</div>
+</>
+    );
+}
+
+
+
 export default App;
+
