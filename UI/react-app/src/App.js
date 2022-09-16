@@ -12,8 +12,10 @@ const App = () => {
   return (
     <div>
       <Header />
-      <OrderSummary />
-      <OrderPlaced />
+      <FoodDetails />
+    
+      {/*<OrderSummary />
+      <OrderPlaced />*/}
       {/*<SearchBox/>*/}
       {/*<FoodList/>*/}
       {/*<OrderHistory/>*/}
@@ -1483,10 +1485,14 @@ const OrderSummary = () => {
   return (
     <div className="auth-wrapper">
       <div className="auth-inner">
-        <div class="row align-items-center">
+        <div class="row container align-items-center">
           <ul class="list-group  align-self-center">
             <li class="list-group-item d-flex justify-content-between align-items-center">
-              Veg-Biryani --- 150
+              Samosa --- 50 <img
+                    src="assets\img\post\samosa.jpg"
+                    className="card-img-top"
+                    alt="samosa"
+                  />
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
               Veg-Thali ---250
@@ -1537,6 +1543,50 @@ const OrderPlaced = () => {
         <div class="container">
           <h1>OrderPlaced..!</h1>
           <h2>Order Details</h2>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+{
+  /*FoodDetails */
+}
+const FoodDetails = () => {
+  return (
+    <div className="auth-wrapper">
+      <div className="auth-inner">
+        <div class="container">
+          <h1>Noodles ---- Homemaker Name</h1>
+          <h2>Pincode- 208001</h2>
+
+          <span class="border border-secondary">
+            <div class="container">
+              <h1>Food Description</h1>
+              <p>
+                Category- Veg/Non-Veg <br /> Quantity- 500gm <br /> Servings- 4
+              </p>
+            </div>
+          </span>
+          <col-2>
+            <button type="button" class="btn btn-warning">
+              Add To Cart
+            </button>
+          </col-2>
+          <col-4>
+            <button type="button" class="btn btn-success">
+              Place Order Now
+            </button>
+          </col-4>
+
+          {/*Images Tiles*/}
+          <div class="container align-items-right">
+            <img
+              src="assets\img\post\noodles.jpg"
+              className="card-img-top rounded"
+              alt="noodles"
+            />
+          </div>
         </div>
       </div>
     </div>
