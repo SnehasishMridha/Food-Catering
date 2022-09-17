@@ -1,10 +1,12 @@
 package project.jparest.dao;
 
+import java.sql.Blob;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import project.jparest.entity.ConsumerEntity;
 import project.jparest.repository.ConsumerRepository;
@@ -50,6 +52,18 @@ public class ConsumerDao {
 		}
 		else
 			return "invalid";
+	}
+	
+	public String addToProfile(String address,String email,int pincode,Blob picture,int mob)
+	{
+		ConsumerEntity user = repo.findByEmail(email);
+		
+		user.setAddress(address);
+		user.setPicture_profile(picture);
+		user.setPincode(pincode);
+		user.setMobile(mob);
+		repo.save(user);
+		return "added";
 	}
 }
 

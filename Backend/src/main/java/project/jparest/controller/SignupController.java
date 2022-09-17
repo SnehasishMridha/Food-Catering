@@ -1,9 +1,11 @@
-/*package project.jparest.controller;
+package project.jparest.controller;
 
+import java.sql.Blob;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,56 +37,47 @@ public class SignupController {
 	{
 		List<ConsumerEntity> consumer=dao.getAll();
 		return consumer;
-
 	}
+	
 	@PostMapping("/addconsumer")
-	public String addConsumer(@RequestBody ConsumerEntity consumer)
+	public String addConsumer(@RequestBody ConsumerEntity c)
 	{
-		ConsumerEntity con=new ConsumerEntity(consumer.getConsumer_firstname(),
-				                               consumer.getConsumer_lastname(),
-				                               consumer.getConsumer_mobile(),
-				                               consumer.getConsumer_username(),
-				                               consumer.getConsumer_password(),    
-				                               consumer.getConsumer_email_id(),
-				                               consumer.getConsumer_address(),
-				                               consumer.getPincode(),
-				                               consumer.getConsumer_picture_profile()
-				                               );
+		System.out.println(c.getFirstname());
+		ConsumerEntity con=new ConsumerEntity(c.getFirstname(),c.getLastname(),
+				                              c.getUsername(),c.getPassword(),c.getEmail());
 		dao.addConsumer(con);
 		return "record inserted";
 	}
 	
 	@PostMapping("/addemployee")
-	public String addEmployee(@RequestBody EmployeeEntity employee)
+	public String addEmployee(@RequestBody EmployeeEntity e)
 	{
-		EmployeeEntity con=new EmployeeEntity(employee.getEmployee_firstname(),
-				                               employee.getEmployee_lastname(),
-				                               employee.getEmployee_mobile(),
-				                               employee.getEmployee_username(),
-				                               employee.getEmployee_password(),    
-				                               employee.getEmployee_email_id(),
-				                               employee.getEmployee_picture_profile(),			          
-				                               employee.getEmployee_role()
-				                               );
+		EmployeeEntity con=new EmployeeEntity(e.getFirstname(),e.getLastname(),
+                e.getUsername(),e.getPassword(),e.getEmail());
 		dao1.addEmployee(con);
 		return "record inserted";
 	}
 	
 	@PostMapping("/addhomemaker")
-	public String addHomemaker(@RequestBody HomemakerEntity homemaker)
+	public String addHomemaker(@RequestBody HomemakerEntity h)
 	{
-		HomemakerEntity con=new HomemakerEntity(homemaker.getHomemaker_firstname(),
-				                               homemaker.getHomemaker_lastname(),
-				                               homemaker.getHomemaker_mobile(),
-				                               homemaker.getHomemaker_username(),			                             
-				                               homemaker.getHomemaker_password(),    
-				                               homemaker.getHomemaker_email_id(),
-				                               homemaker.getHomemaker_address(),
-				                               homemaker.getPincode(),
-				                               homemaker.getHomemaker_picture_profile()				                               
-				                               );
+		HomemakerEntity con=new HomemakerEntity(h.getFirstname(),h.getLastname(),
+               h.getUsername(),h.getPassword(), h.getEmail_id());
 		dao2.addHomemaker(con);
 		return "record inserted";
 	}
 	
-}*/
+	//will manage homemaker,consumer,employee
+	//**********pathavariable profile is removed
+	//@PostMapping("/profile/{address}/{mobile}/{email}/{pincode}/{picture}")
+	//public String addProfile(@PathVariable String address,@PathVariable int mobile,@PathVariable String email,@PathVariable int pincode)
+	{
+	//	String check=dao.addToProfile(address,email,pincode,mobile);
+	//	return check;
+	}
+	
+	
+	
+	
+	
+}

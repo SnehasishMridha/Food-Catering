@@ -10,31 +10,36 @@ import project.jparest.entity.FoodlistEntity;
 import project.jparest.repository.FoodListRepository;
 @Service
 public class FoodListDao {
-	
-				@Autowired
-					FoodListRepository repo;
-					
-					public List<FoodlistEntity> getAll()
-					{
-						List<FoodlistEntity> list=repo.findAll();
-						return list;
-					}
-					
-					public String addfood(FoodlistEntity food ) 
-					{
-						System.out.println("get2");
-						repo.save(food);
-						return "Saved";
-					}
-				    
-					public void delete(int id) 
-					{
-						repo.deleteById(id);
-					}
-					
-					public Optional<FoodlistEntity> get(int id)
-					{
-						return Optional.ofNullable(repo.findById(id).get());
-					}
-			
+
+	@Autowired
+	FoodListRepository repo;
+
+	public List<FoodlistEntity> getAll()
+	{
+		List<FoodlistEntity> list=repo.findAll();
+		return list;
+	}
+
+	public String addfood(FoodlistEntity food ) 
+	{
+		repo.save(food);
+		return "Saved";
+	}
+
+	public String delete(FoodlistEntity food) 
+	{
+		repo.deleteById(food.getId());
+		return "deleted";
+	}
+
+	public Optional<FoodlistEntity> get(int id)
+	{
+		return Optional.ofNullable(repo.findById(id).get());
+	}
+
+	public Optional<List<FoodlistEntity>> getFoodName(String name)
+	{
+		return Optional.ofNullable(repo.findByName(name));
+	}
+
 }
