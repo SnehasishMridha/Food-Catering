@@ -504,57 +504,68 @@ const Auth = () => {
 };
 
 // Login Form
-const Login = () => {
-  return (
-    <div className="auth-wrapper">
+const Login = () => 
+{
+    return (
+      <div className="auth-wrapper">
       <div className="auth-inner">
         <form>
-          <h3>Sign In</h3>
-          <div className="mb-3">
-            <label>Email username or address</label>
-            <input
-              type="email"
-              className="form-control"
-              placeholder="Enter username or email"
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <label>Password</label>
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Enter password"
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <div className="custom-control custom-checkbox">
-              <input
-                type="checkbox"
-                className="custom-control-input"
-                id="customCheck1"
-              />
-              <label className="custom-control-label" htmlFor="customCheck1">
-                Remember me
-              </label>
+            <h3>Login</h3>
+            <div className="mb-3">
+                <label>Email username or address</label>
+                <input
+                type="email"
+                className="form-control"
+                placeholder="Enter username or email"
+                required
+                />
             </div>
-          </div>
-          <div className="d-grid">
-            <button type="submit" className="main-btn-2 ">
-              {" "}
-              {/*btn btn-primary*/}
-              Submit
-            </button>
-          </div>
-          <p className="forgot-password text-right">
+            <div className="mb-3">
+                <label>Password</label>
+                <input
+                type="password"
+                className="form-control"
+                placeholder="Enter password"
+                required
+                />
+            </div>
+            <div>
+                <input type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+                <label for="flexRadioDefault1">
+                 Home maker
+                </label>
+            </div>
+            <div>
+                <input type="radio" name="flexRadioDefault" id="flexRadioDefault2" /*checked*//>
+                <label for="flexRadioDefault2">
+                 Consumer
+                </label>
+            </div><br/><br/>
+            <div className="mb-3">
+                <div className="custom-control custom-checkbox">
+                    <input
+                    type="checkbox"
+                    className="custom-control-input"
+                    id="customCheck1"
+                    />
+                    <label className="custom-control-label" htmlFor="customCheck1">
+                    Remember me
+                    </label>
+                </div>
+            </div>
+            <div>
+                <button type="submit" className="main-btn-2 "> {/*btn btn-primary*/}
+                Login 
+                </button>
+            </div>
+            <p className="forgot-password text-right">
             Forgot <a href="#">password?</a>
-          </p>
+            </p>
         </form>
       </div>
-    </div>
+      </div>
   );
-};
+}
 
 // Sign up
 const SignUp = () => {
@@ -599,7 +610,7 @@ const SignUp = () => {
             />
           </div>
           <div className="mb-3">
-            <label>Mobile number (10 digits only) *</label>
+            <label>Mobile number (10 digits only) </label>
             <input
               type="number"
               className="form-control"
