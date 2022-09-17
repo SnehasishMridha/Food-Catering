@@ -63,4 +63,12 @@ public class EmployeeDao {
 			repo.save(emp);
 			return "added";
 		}
+
+		public EmployeeEntity changePassword(@PathVariable String email,@PathVariable String oldpwd,@PathVariable String newpwd)
+		{
+			EmployeeEntity h=repo.findByEmail(email);
+			h.setPassword(newpwd);
+			repo.save(h);
+			return h;
+		}
 }

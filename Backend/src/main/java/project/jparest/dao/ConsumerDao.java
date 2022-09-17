@@ -47,8 +47,6 @@ public class ConsumerDao {
 		{
 		if(consumer_password.equals(user.getPassword()))
 		    return "valid";
-		else 
-			return "invalid";
 		}
 		else
 			return "invalid";
@@ -65,6 +63,16 @@ public class ConsumerDao {
 		repo.save(user);
 		return "added";
 	}
+
+	public ConsumerEntity changePassword(@PathVariable String email,@PathVariable String oldpwd,@PathVariable String newpwd)
+	{
+		ConsumerEntity c=repo.findByEmail(email);
+		c.setPassword(newpwd);
+		repo.save(c);
+		return c;
+	}
+
+	
 }
 
 		

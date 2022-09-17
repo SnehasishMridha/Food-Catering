@@ -506,6 +506,26 @@ const Auth = () => {
 // Login Form
 const Login = () => 
 {
+  let [user,setUser] = useState({email:"",pwd:""})
+  let navigate = useNavigate()
+  function loginHandler()
+  {
+    if(document.getElementById("con").value=="consumer")
+    {
+         axios.post('http://localhost:8080/signin/logincon',{email:user.email,pwd:user.pwd})
+      .then(data =>{
+            console.log(data.data)
+           if(data.data === "valid")
+           {
+            alert("success");
+            sessionStorage["email"]=user.email;
+              navigate("/admin")
+           }
+           else if (data.data === "unauthorized")
+           {
+            alert("failed");
+              navigate("/admin");
+           }
     return (
       <div className="auth-wrapper">
       <div className="auth-inner">
