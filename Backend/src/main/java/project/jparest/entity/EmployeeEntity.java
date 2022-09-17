@@ -19,32 +19,32 @@ public class EmployeeEntity {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="employee_id",unique=true,nullable=false)
+	@Column(name="employee_id",unique=true)
 	private int id;
 	
-	@Column(name="employee_firstname",nullable=false)
+	@Column(name="employee_firstname")
 	private String firstname;
 	
-	@Column(name="employee_lastname",nullable=false)
+	@Column(name="employee_lastname")
 	private String lastname;
 	
-	@Column(name="employee_mobile",nullable=false)
+	@Column(name="employee_mobile")
 	private long mobile;
 	
-	@Column(name="employee_username",nullable=false)
+	@Column(name="employee_username")
 	private String  username;
 	
-	@Column(name="employee_password",nullable=false)
+	@Column(name="employee_password")
 	private String password;
 	
-	@Column(name=" employee_email_id",nullable=false)
+	@Column(name=" employee_email_id")
 	private String email;
 	
 	@Lob
 	@Column(name="employee_picture_profile")
 	private Blob picture_profile;
 	
-	@Column(name="employee_role",nullable=false)
+	@Column(name="employee_role")
 	private String role;
 	
 	@OneToMany(mappedBy="emp", cascade = CascadeType.ALL)
@@ -52,6 +52,17 @@ public class EmployeeEntity {
 	
 	public EmployeeEntity()
 	{}
+	
+
+	public EmployeeEntity(String firstname, String lastname, String username, String password, String email) {
+		super();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.username = username;
+		this.password = password;
+		this.email = email;
+	}
+
 
 	public EmployeeEntity(String firstname, String lastname, long mobile, String username, String password,
 			String email, Blob picture_profile, String role) {

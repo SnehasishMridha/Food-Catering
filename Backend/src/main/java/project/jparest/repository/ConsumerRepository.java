@@ -5,7 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import project.jparest.entity.ConsumerEntity;
 
+
 @Repository
 public interface ConsumerRepository extends JpaRepository<ConsumerEntity, Integer>  {
+	
+	public ConsumerEntity findByEmail(String n);
+	
 
 }

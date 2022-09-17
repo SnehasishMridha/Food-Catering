@@ -1,9 +1,13 @@
 package project.jparest.entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import java.sql.Blob;
+import java.sql.Date;
+import java.sql.Time;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -19,142 +23,186 @@ public class FoodlistEntity {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="food_id",unique=true,nullable=false)
-	private int food_id;
+	@Column(name="food_id",unique=true)
+	private int id;
+	
+	@Lob
+	@Column(name="food_image")
+	private Blob image ;
+	
+	@Column(name="food_name")
+	private String name ;
+	
+	@Column(name="food_description")
+	private String data ;
+	
+	@Column(name="food_price")
+	private int price ;
 
-	@Column(name="food_name",nullable=false)
-	private String food_name ;
+	@Column(name="food_category")
+	private String category ;
 
-	@Column(name="food_price",nullable=false)
-	private int food_price ;
-
-	@Column(name="food_category",nullable=false)
-	private long food_category ;
-
-	@Column(name="qnt",nullable=false)
+	@Column(name="qnt")
 	private int  qnt ;
 
-	@Column(name="unit",nullable=false)
-	private int unit ;
-
-	@ManyToOne
+	@Column(name="unit")
+	private Time unit ;
+	
+	@Column(name="valid_till_date")
+	private Date date ;     
+	
+	@Column(name="valid_till_time")
+	private Time time ; 
+	
+	@ManyToOne(cascade = CascadeType.ALL)  //consumer added
+	@JoinColumn(name="consumer_id")
+	private ConsumerEntity consumer;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="homemaker_id")
 	private HomemakerEntity homemaker;
 
-	@OneToMany(mappedBy="foodList", cascade = CascadeType.ALL)
-	private List<FoodImageEntity> food;
+	@OneToMany(mappedBy="foodList",cascade = CascadeType.ALL)
+    private List<OrderDetailsEntity> orders;
 
-	@OneToMany(mappedBy="foodList", cascade = CascadeType.ALL)
-     private List<OrderDetailsEntity> orders;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="cart_id")
+    private CartEntity cart;
 
-	@OneToMany(mappedBy="foodlist", cascade = CascadeType.ALL)
-	private List<PostTblEntity> post;
-	
 	public FoodlistEntity() {}
 
-	public FoodlistEntity(int food_id, String food_name, int food_price, long food_category, int qnt, int unit,
-			HomemakerEntity homemaker, List<FoodImageEntity> food, List<OrderDetailsEntity> orders,
-			List<PostTblEntity> post) {
-		super();
-		this.food_id = food_id;
-		this.food_name = food_name;
-		this.food_price = food_price;
-		this.food_category = food_category;
-		this.qnt = qnt;
-		this.unit = unit;
-		this.homemaker = homemaker;
-		this.food = food;
-		this.orders = orders;
-		this.post = post;
+	public int getId() {
+		return id;
 	}
 
-	public int getFood_id() {
-		return food_id;
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public void setFood_id(int food_id) {
-		this.food_id = food_id;
+
+	public Blob getImage() {
+		return image;
 	}
 
-	public String getFood_name() {
-		return food_name;
+
+	public void setImage(Blob image) {
+		this.image = image;
 	}
 
-	public void setFood_name(String food_name) {
-		this.food_name = food_name;
+
+	public String getName() {
+		return name;
 	}
 
-	public int getFood_price() {
-		return food_price;
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public void setFood_price(int food_price) {
-		this.food_price = food_price;
+
+	public String getData() {
+		return data;
 	}
 
-	public long getFood_category() {
-		return food_category;
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
-	public void setFood_category(long food_category) {
-		this.food_category = food_category;
+
+	public int getPrice() {
+		return price;
 	}
+
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+
+	public String getCategory() {
+		return category;
+	}
+
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
 
 	public int getQnt() {
 		return qnt;
 	}
 
+
 	public void setQnt(int qnt) {
 		this.qnt = qnt;
 	}
 
-	public int getUnit() {
+
+	public Time getUnit() {
 		return unit;
 	}
 
-	public void setUnit(int unit) {
+
+	public void setUnit(Time unit) {
 		this.unit = unit;
 	}
+
+
+	public Date getDate() {
+		return date;
+	}
+
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+
+	public Time getTime() {
+		return time;
+	}
+
+
+	public void setTime(Time time) {
+		this.time = time;
+	}
+
+
+	public ConsumerEntity getConsumer() {
+		return consumer;
+	}
+
+
+	public void setConsumer(ConsumerEntity consumer) {
+		this.consumer = consumer;
+	}
+
 
 	public HomemakerEntity getHomemaker() {
 		return homemaker;
 	}
 
+
 	public void setHomemaker(HomemakerEntity homemaker) {
 		this.homemaker = homemaker;
 	}
 
-	public List<FoodImageEntity> getFood() {
-		return food;
-	}
-
-	public void setFood(List<FoodImageEntity> food) {
-		this.food = food;
-	}
 
 	public List<OrderDetailsEntity> getOrders() {
 		return orders;
 	}
 
+
 	public void setOrders(List<OrderDetailsEntity> orders) {
 		this.orders = orders;
 	}
 
-	public List<PostTblEntity> getPost() {
-		return post;
-	}
-
-	public void setPost(List<PostTblEntity> post) {
-		this.post = post;
-	}
-
-	@Override
-	public String toString() {
-		return "FoodlistEntity [food_id=" + food_id + ", food_name=" + food_name + ", food_price=" + food_price
-				+ ", food_category=" + food_category + ", qnt=" + qnt + ", unit=" + unit + ", homemaker=" + homemaker
-				+ ", food=" + food + ", orders=" + orders + ", post=" + post + "]";
-	}
-
+	
+	
+	
 	
 
 }

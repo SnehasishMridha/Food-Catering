@@ -15,7 +15,7 @@ public class ReviewEntity {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="review_id",unique=true,nullable=false)
+	@Column(name="review_id")
 	private int review_id;
 
 	@Column(name="food_review")
@@ -24,24 +24,20 @@ public class ReviewEntity {
 	@Column(name="food_rating")
 	private int food_rating  ;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="consumer_id")
 	private ConsumerEntity consumer;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="order_id")
 	private OrderDetailsEntity order;
 	
 	public ReviewEntity() {}
-
-	public ReviewEntity(int review_id, String food_review, int food_rating, ConsumerEntity consumer,
-			OrderDetailsEntity order) {
+ 
+	public ReviewEntity(String food_review, int food_rating) {
 		super();
-		this.review_id = review_id;
 		this.food_review = food_review;
 		this.food_rating = food_rating;
-		this.consumer = consumer;
-		this.order = order;
 	}
 
 	public int getReview_id() {

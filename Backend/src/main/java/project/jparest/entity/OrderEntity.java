@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,23 +22,26 @@ public class OrderEntity {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="order_id",unique=true,nullable=false)
+	@Column(name="order_id")
 	private int order_id;
 	
-	@Column(name="total_amount",nullable=false)
+	@Column(name="total_amount")
 	private int total_amount;
 	
-	@Column(name="order_status",nullable=false)
+	@Column(name="order_status")
 	private String order_status;
 	
-	@Column(name="shipping_address",nullable=false)
+	@Column(name="shipping_address")
 	private String  shipping_address;
 	
-	@Column(name="order_date",nullable=false)
+	@Column(name="order_date")
 	private Date order_date;
 	
-	@Column(name="order_time",nullable=false)
+	@Column(name="order_time")
 	private Time order_time;
+	
+	@OneToOne
+	private CartEntity cart;
 	
 	@ManyToOne
 	@JoinColumn(name="employee_id")
@@ -54,7 +58,7 @@ public class OrderEntity {
 	{}
 
 	public OrderEntity(int order_id, int total_amount, String order_status, String shipping_address, Date order_date,
-			Time order_time, EmployeeEntity emp, ConsumerEntity consumer, List<OrderDetailsEntity> orders) {
+			Time order_time) {
 		super();
 		this.order_id = order_id;
 		this.total_amount = total_amount;
@@ -62,9 +66,6 @@ public class OrderEntity {
 		this.shipping_address = shipping_address;
 		this.order_date = order_date;
 		this.order_time = order_time;
-		this.emp = emp;
-		this.consumer = consumer;
-		this.orders = orders;
 	}
 
 	public int getOrder_id() {

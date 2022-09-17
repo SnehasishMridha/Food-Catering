@@ -21,38 +21,41 @@ public class ConsumerEntity {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="consumer_id",unique=true,nullable=false)
+    @Column(name="consumer_id",unique=true)
     private int id;
 
-    @Column(name="consumer_firstname ",nullable=false)
+    @Column(name="consumer_firstname ")
     private String firstname ;
 
-    @Column(name="consumer_lastname",nullable=false)
+    @Column(name="consumer_lastname")
     private String lastname ;
 
-    @Column(name="consumer_mobile",nullable=false)
+    @Column(name="consumer_mobile")
     private long mobile ;
   
-    @Column(name="consumer_username",nullable=false)
+    @Column(name="consumer_username")
     private String  username ;
 
-    @Column(name="consumer_password",nullable=false)
+    @Column(name="consumer_password")
     private String password ;
 
-    @Column(name="consumer_email_id",nullable=false)
-    private String email ;
+    @Column(name="consumer_email_id")
+    private String email;
     
-    @Column(name="consumer_address",nullable=false)
-    private String address ;
+    @Column(name="consumer_address")
+    private String address;
 
-    @Column(name="pincode",nullable=false)
+    @Column(name="pincode")
     private int pincode ;
 
     @Lob
     @Column(name="consumer_picture_profile ")
-    private Blob picture_profile ;
+    private Blob picture_profile;
     
-    @OneToMany(mappedBy="consumer", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy="consumer",cascade = CascadeType.ALL)
+   	private List<FoodlistEntity> foodList; //foodlist added     
+    
+    @OneToMany(mappedBy="consumer",cascade = CascadeType.ALL)
 	private List<OrderEntity> orders;
     
     @OneToMany(mappedBy="consumer", cascade = CascadeType.ALL)
@@ -61,9 +64,18 @@ public class ConsumerEntity {
     public ConsumerEntity()
     {}
 
+	public ConsumerEntity(String firstname, String lastname, String username, String password, String email) {
+		super();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.username = username;
+		this.password = password;
+		this.email = email;
+	}
+
 	public ConsumerEntity(String firstname, String lastname, long mobile, String username, String password,
 			String email, String address, int pincode, Blob picture_profile) {
-		super();
+		super();		
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.mobile = mobile;

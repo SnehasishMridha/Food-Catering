@@ -1,5 +1,4 @@
 package project.jparest.entity;
-
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -18,20 +17,20 @@ import javax.persistence.Table;
 public class OrderDetailsEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="order_item_id",unique=true,nullable=false)
+	@Column(name="order_item_id",unique=true)
 	private int order_item_id;
 	
-	@Column(name="qnt",nullable=false)
+	@Column(name="qnt")
 	private int qnt;
 	
-	@Column(name="total_amount",nullable=false)
+	@Column(name="total_amount")
 	private int total_amount;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="food_id")
 	private FoodlistEntity foodList;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="order_id")
 	private OrderEntity order;
 
@@ -40,15 +39,10 @@ public class OrderDetailsEntity {
 	
 	public OrderDetailsEntity() {}
 
-	public OrderDetailsEntity(int order_item_id, int qnt, int total_amount, FoodlistEntity foodList, OrderEntity order,
-			List<ReviewEntity> reviews) {
+	public OrderDetailsEntity(int qnt, int total_amount) {
 		super();
-		this.order_item_id = order_item_id;
 		this.qnt = qnt;
 		this.total_amount = total_amount;
-		this.foodList = foodList;
-		this.order = order;
-		this.reviews = reviews;
 	}
 
 	public int getOrder_item_id() {
@@ -104,10 +98,6 @@ public class OrderDetailsEntity {
 		return "OrderDetailsEntity [order_item_id=" + order_item_id + ", qnt=" + qnt + ", total_amount=" + total_amount
 				+ ", foodList=" + foodList + ", order=" + order + ", reviews=" + reviews + "]";
 	}
-	
-	
-
-
 	
 }
 

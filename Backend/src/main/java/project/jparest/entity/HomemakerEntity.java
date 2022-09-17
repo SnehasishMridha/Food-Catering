@@ -19,31 +19,31 @@ public class HomemakerEntity {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="homemaker_id",unique=true,nullable=false)
+	@Column(name="homemaker_id",unique=true)
 	private int id;
 	
-	@Column(name="homemaker_firstname",nullable=false)
+	@Column(name="homemaker_firstname")
 	private String firstname;
 	
-	@Column(name="homemaker_lastname",nullable=false)
+	@Column(name="homemaker_lastname")
 	private String lastname;
 	
-	@Column(name="homemaker_mobile",nullable=false)
+	@Column(name="homemaker_mobile")
 	private long mobile;
 	
-	@Column(name="homemaker_username",nullable=false)
+	@Column(name="homemaker_username")
 	private String  username;
 	
-	@Column(name="homemaker_password",nullable=false)
+	@Column(name="homemaker_password")
 	private String password;
 	
-	@Column(name="homemaker_email_id",nullable=false)
-	private String email_id;
+	@Column(name="homemaker_email_id")
+	private String email;
 	
-	@Column(name="homemaker_address",nullable=false)
+	@Column(name="homemaker_address")
 	private String address;
 	 
-	@Column(name="pincode",nullable=false)
+	@Column(name="pincode")
 	private int pincode;
 	
 	@Lob
@@ -54,6 +54,17 @@ public class HomemakerEntity {
 	private List<FoodlistEntity> food;
 	
 	public HomemakerEntity() {}
+	
+
+	public HomemakerEntity(String firstname, String lastname, String username, String password, String email_id) {
+		super();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.username = username;
+		this.password = password;
+		this.email = email_id;
+	}
+
 
 	public HomemakerEntity(String firstname, String lastname, long mobile, String username, String password,
 			String email_id, String address, int pincode, Blob picture_profile) {
@@ -63,7 +74,7 @@ public class HomemakerEntity {
 		this.mobile = mobile;
 		this.username = username;
 		this.password = password;
-		this.email_id = email_id;
+		this.email = email_id;
 		this.address = address;
 		this.pincode = pincode;
 		this.picture_profile = picture_profile;
@@ -118,11 +129,11 @@ public class HomemakerEntity {
 	}
 
 	public String getEmail_id() {
-		return email_id;
+		return email;
 	}
 
 	public void setEmail_id(String email_id) {
-		this.email_id = email_id;
+		this.email = email_id;
 	}
 
 	public String getAddress() {
@@ -160,7 +171,7 @@ public class HomemakerEntity {
 	@Override
 	public String toString() {
 		return "HomemakerEntity [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", mobile="
-				+ mobile + ", username=" + username + ", password=" + password + ", email_id=" + email_id + ", address="
+				+ mobile + ", username=" + username + ", password=" + password + ", email_id=" + email + ", address="
 				+ address + ", pincode=" + pincode + ", picture_profile=" + picture_profile + ", food=" + food + "]";
 	}
 
