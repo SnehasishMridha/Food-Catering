@@ -12,16 +12,24 @@ const App = () => {
   return (
     <div>
       <Header />
-      <FoodDetails />
+      <OrderPlaced />
     
-      {/*<OrderSummary />
-      <OrderPlaced />*/}
-      {/*<SearchBox/>*/}
-      {/*<FoodList/>*/}
-      {/*<OrderHistory/>*/}
       {/*<Home />*/}
       {/*<CProfile/>*/}
       {/*<HMProfile/>*/}
+      {/*<SearchBox/>*/}
+      {/*<FoodList/>*/}
+      {/*
+      <FoodDetails />
+      <OrderSummary />
+      <OrderPlaced />*/}
+      {/*<OrderHistory/>*/}
+
+      {/*
+      <Posting />
+      <PostSuccess />
+      <PostPage />*/}
+
       {/*<Routes>
             {/*<Switch>
                 <Route path="/" element={<Home />} />
@@ -40,147 +48,110 @@ const App = () => {
 };
 
 // Header Home
-const Header = () => {
-  return (
-    <div className="App">
-      <header class="header">
-        <div class="navbar-area">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-12">
+const Header = () =>
+{
+    return(
+        <div className="App">
+            <section class="header">
+                <div class="navbar-area">
+                <div class="container">
+                <div class="row align-items-center">
+                <div class="col-lg-12">
                 <nav class="navbar navbar-expand-lg">
-                  <a class="navbar-brand" href="#">
-                    {/*Home*/}
-                    <img src="assets/img/logo/logo.jpg" alt="Logo" />
-                  </a>
-                  <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                  >
-                    <span class="toggler-icon"></span>
-                    <span class="toggler-icon"></span>
-                    <span class="toggler-icon"></span>
-                  </button>
-                  {/*Navigation Bar*/}
-                  <div
-                    class="collapse navbar-collapse sub-menu-bar"
-                    id="navbarSupportedContent"
-                  >
-                    <ul id="nav" class="navbar-nav ml-auto">
-                      <li class="nav-item">
-                        {/*<a class="page-scroll" href="#home">Home</a>*/}
-                        <Link className="nav-link" to={"/home"}>
-                          {/*home*/}
-                          Home
-                        </Link>
-                      </li>
-                      <li class="nav-item">
-                        <a class="page-scroll" href="#services">
-                          Services
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="page-scroll" href="#about">
-                          About
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="page-scroll" href="#how">
-                          How It Works
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        {/*<a class="page-scroll" href="#about">Login</a>*/}
-                        <Link className="nav-link" to={"/sign-in"}>
-                          Login
-                        </Link>
-                      </li>
-                      <li class="nav-item">
-                        {/*<a class="page-scroll" href="#about">Sign up</a>*/}
-                        <Link className="nav-link" to={"/sign-up"}>
-                          Sign up
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
+                <a class="navbar-brand" href="#">{/*Home*/}
+                <img src="assets/img/logo/logo.jpg" alt="Logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                </button>
+                {/*Navigation Bar*/}
+                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                <ul id="nav" class="navbar-nav ml-auto">
+                <li class="nav-item">
+                <a class="page-scroll" href="home">Home</a>
+                   {/* <Link className="nav-link page-scroll" to={'/#'}>{/*home
+                    Home
+                    </Link>*/}
+                </li>
+                {/*<li class="nav-item">
+                <a class="page-scroll" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                <a class="page-scroll" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                <a class="page-scroll" href="#how">How It Works</a>
+                </li>*/}
+                <li class="nav-item">
+                {/*<a class="page-scroll" href="#about">Login</a>*/}
+                    <Link className="nav-link" to={'/sign-in'}>
+                    Login
+                    </Link>
+                </li>
+                <li class="nav-item">
+                {/*<a class="page-scroll" href="#about">Sign up</a>*/}
+                    <Link className="nav-link" to={'/sign-up'}>
+                    Sign up
+                    </Link>
+                </li>
+                </ul>
+                </div>
                 </nav>
-              </div>
-            </div>
-          </div>
+                </div>
+                </div>
+                </div>
+                </div>
+            </section>
+
         </div>
-      </header>
-    </div>
-  );
-};
+    );
+}
+
+
 
 // Header Login
-const Header2 = () => {
-  return (
-    <div className="App">
-      <header class="header">
-        <div class="navbar-area">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-12">
-                <nav class="navbar navbar-expand-lg">
-                  <a class="navbar-brand" href="#">
-                    {/*Home*/}
-                    <img src="assets/img/logo/logo.jpg" alt="Logo" />
-                  </a>
-                  <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                  >
-                    <span class="toggler-icon"></span>
-                    <span class="toggler-icon"></span>
-                    <span class="toggler-icon"></span>
-                  </button>
-                  {/*Navigation Bar*/}
-                  <div
-                    class="collapse navbar-collapse sub-menu-bar"
-                    id="navbarSupportedContent"
-                  >
-                    <ul id="nav" class="navbar-nav ml-auto">
-                      <li class="nav-item">
-                        {/*<a class="page-scroll" href="#home">Home</a>*/}
-                        <Link className="nav-link" to={"/home"}>
-                          {/*home*/}
-                          Home
-                        </Link>
-                      </li>
-                      <li class="nav-item">
-                        {/*<a class="page-scroll" href="#about">Login</a>*/}
-                        <Link className="nav-link" to={"/sign-in"}>
-                          Login
-                        </Link>
-                      </li>
-                      <li class="nav-item">
-                        {/*<a class="page-scroll" href="#about">Sign up</a>*/}
-                        <Link className="nav-link" to={"/sign-up"}>
-                          Sign up
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </nav>
-              </div>
-            </div>
-          </div>
+const Header2 = () =>
+{
+    return(
+
+<div className="App">
+    <section class="header">
+        <div class="navbar-area-2">
+        <div class="container">
+        <div class="row align-items-center">
+        <div class="col-lg-12">
+        <nav class="navbar navbar-expand-lg">
+        <div class="row align-items-center" id="navbarSupportedContent">
+        <ul id="nav" class="navbar-nav ml-auto">
+        <li class="nav-item">
+        <a class="page-scroll" href="#services">Services</a>
+        </li>
+        <li class="nav-item">
+        <a class="page-scroll" href="#about">About Us</a>
+        </li>
+        <li class="nav-item">
+        <a class="page-scroll" href="#how">How It Works</a>
+        </li>
+        <li class="nav-item">
+        <a class="page-scroll" href="#received">Delivery</a>
+        </li>
+        <li class="nav-item">
+        </li>
+        </ul>
         </div>
-      </header>
-    </div>
-  );
-};
+        </nav>
+        </div>
+        </div>
+        </div>
+        </div>
+    </section>
+</div>
+    );
+}
+
+
 
 // Footer
 const Footer = () => {
@@ -322,6 +293,7 @@ const Home = () => {
       <Services />
       <About />
       <How />
+      <Received/>
     </div>
   );
 };
@@ -497,6 +469,35 @@ const How = () => {
     </section>
   );
 };
+
+
+// Contactless Delivery
+const Received = () =>
+{
+    return(
+      <section id="received" class="about-section received-section pt-150">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <div class="about-img received-img wow fadeInUp" data-wow-delay=".5s">
+                <img src="assets/img/received/received-img.svg" alt="" />
+              </div>
+            </div>
+            <div class="col-lg-6">
+            <div class="about-content received-content">
+            <div class="section-title">
+              <span class="wow fadeInUp" data-wow-delay=".2s">Contactless Delivery</span>
+              <h1 class="mb-25 wow fadeInUp" data-wow-delay=".4s">On-time Delivery to Your Doorstep</h1>
+              <p class="wow fadeInUp" data-wow-delay=".6s">No need to worry during pandemic like situations. Our delivery partner will take all the safety precautions. </p>
+            </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+}
+
 
 const Auth = () => {
   return <Header2 />;

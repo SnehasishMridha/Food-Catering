@@ -387,3 +387,30 @@ body {
 .rate > label:hover ~ input:checked ~ label {
     color: #c59b08;
 }
+
+/* Header2 */
+.navbar-area-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  transition: all 0.3s ease-out 0s;
+  margin-top: 5em;
+  margin-bottom: 0em;
+}
+
+
+.navbar-2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.nav-fill .nav-item-2,
+.nav-fill > .nav-link {
+    text-align: center;
+}
