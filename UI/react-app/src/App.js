@@ -12,17 +12,17 @@ const App = () => {
   return (
     <div>
       <Header />
-      <OrderPlaced />
+      {/*<OrderPlaced />*/}
     
       {/*<Home />*/}
       {/*<CProfile/>*/}
       {/*<HMProfile/>*/}
       {/*<SearchBox/>*/}
       {/*<FoodList/>*/}
-      {/*
+      
       <FoodDetails />
-      <OrderSummary />
-      <OrderPlaced />*/}
+      {/*<OrderSummary />*/}
+      {/*<OrderPlaced />*/}
       {/*<OrderHistory/>*/}
 
       {/*
@@ -1568,18 +1568,30 @@ const FoodDetails = () => {
   return (
     <div className="auth-wrapper">
       <div className="auth-inner">
-        <div class="container">
-          <h1>Noodles ---- Homemaker Name</h1>
-          <h2>Pincode- 208001</h2>
+        <div class="container ">
+          <div text-align="left" > 
+          <h3>Noodles</h3>
+          <h4>Homemaker Name</h4>
+          <h5>Pincode- 208001</h5> </div>
 
           <span class="border border-secondary">
             <div class="container">
               <h1>Food Description</h1>
+              {/*Images Tiles*/}
+          <div class="row align-items-right">
+            <img
+              src="assets\img\post\noodles.jpg"
+              className="card-img-top rounded"
+              alt="noodles"
+            />
+          
+          </div>
               <p>
                 Category- Veg/Non-Veg <br /> Quantity- 500gm <br /> Servings- 4
               </p>
             </div>
           </span>
+          <div class="container row-1 col-0">
           <col-2>
             <button type="button" class="btn btn-warning">
               Add To Cart
@@ -1590,15 +1602,9 @@ const FoodDetails = () => {
               Place Order Now
             </button>
           </col-4>
-
-          {/*Images Tiles*/}
-          <div class="container align-items-right">
-            <img
-              src="assets\img\post\noodles.jpg"
-              className="card-img-top rounded"
-              alt="noodles"
-            />
           </div>
+
+          
         </div>
       </div>
     </div>
