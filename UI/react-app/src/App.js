@@ -506,7 +506,7 @@ const Auth = () => {
 // Login Form
 const Login = () => 
 {
-  let [user,setUser] = useState({email:"",pwd:""})
+  {/*let [user,setUser] = useState({email:"",pwd:""})
   let navigate = useNavigate()
   function loginHandler()
   {
@@ -525,7 +525,7 @@ const Login = () =>
            {
             alert("failed");
               navigate("/admin");
-           }
+           }*/}
     return (
       <div className="auth-wrapper">
       <div className="auth-inner">
