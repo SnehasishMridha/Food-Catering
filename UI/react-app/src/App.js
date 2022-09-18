@@ -1151,6 +1151,7 @@ function Posting() {
               <label for="flexRadioDefault2">Non-Vegetarian</label>
             </div>
           </div>
+          <br/><br/>
           <div className="mb-3">
             <label>Food Price</label>
             <input
@@ -1173,6 +1174,23 @@ function Posting() {
               type="text"
               className="form-control"
               placeholder="In Grams"
+            />
+          </div>
+          <div className="mb-3">
+            <label>Date of Service:</label>
+            <input
+              type="date"
+              className="form-control"
+              
+            />
+          </div>
+          
+          <div className="mb-3">
+            <label>Time of Service:</label>
+            <input
+              type="time"
+              className="form-control"
+              
             />
           </div>
 
