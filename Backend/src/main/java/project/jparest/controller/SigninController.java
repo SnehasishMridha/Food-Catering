@@ -46,4 +46,23 @@ public class SigninController {
 		return check;
 	}
 	
+	@PutMapping("forgetpwdcon/{email}/{oldpwd}/{newpwd}")
+	public ConsumerEntity changePasswordCon(@PathVariable String email,@PathVariable String oldpwd,@PathVariable String newpwd)
+	{
+		ConsumerEntity u=c.changePassword(email, oldpwd, newpwd);
+		return u;
+	}
+	@PutMapping("forgetpwdcon/{email}/{oldpwd}/{newpwd}")
+	public HomemakerEntity changePasswordHome(@PathVariable String email,@PathVariable String oldpwd,@PathVariable String newpwd)
+	{
+		HomemakerEntity u=h.changePassword(email, oldpwd, newpwd);
+		return u;
+	}
+
+	@PutMapping("forgetpwdEmp/{email}/{oldpwd}/{newpwd}")
+	public EmployeeEntity changePasswordEmp(@PathVariable String email,@PathVariable String oldpwd,@PathVariable String newpwd)
+	{
+		EmployeeEntity u=e.changePassword(email, oldpwd, newpwd);
+		return u;
+	}
 }
