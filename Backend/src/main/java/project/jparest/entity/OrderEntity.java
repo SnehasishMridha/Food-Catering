@@ -11,42 +11,45 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="order_tbl")
 public class OrderEntity {
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="order_id")
 	private int order_id;
-	
+
 	@Column(name="total_amount")
 	private int total_amount;
-	
+
 	@Column(name="order_status")
 	private String order_status;
-	
+
 	@Column(name="shipping_address")
 	private String  shipping_address;
-	
+
 	@Column(name="order_date")
 	private Date order_date;
-	
+
 	@Column(name="order_time")
 	private Time order_time;
-	
-	@OneToOne
-	private CartEntity cart;
-	
+
+	//	@OneToOne
+	//	private CartEntity cart;
+
+	@ManyToMany(mappedBy = "orders1")
+	private List<FoodlistEntity> foodlist;
+
 	@ManyToOne
 	@JoinColumn(name="employee_id")
 	private EmployeeEntity emp;
-	
+
 	@ManyToOne
 	@JoinColumn(name="consumer_id")
 	private ConsumerEntity consumer;
@@ -147,6 +150,6 @@ public class OrderEntity {
 				+ ", emp=" + emp + ", consumer=" + consumer + ", orders=" + orders + "]";
 	}
 
-	
-	
+
+
 }	

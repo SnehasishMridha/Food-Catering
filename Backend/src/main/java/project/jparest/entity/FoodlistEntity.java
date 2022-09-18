@@ -1,7 +1,9 @@
 package project.jparest.entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -54,6 +56,10 @@ public class FoodlistEntity {
 	@Column(name="valid_till_time")
 	private Time time ; 
 	
+	@ManyToMany
+	@JoinTable(name = "food_order_list",joinColumns = {@JoinColumn(name="food_id")},inverseJoinColumns = @JoinColumn(name="order_id"))
+	private List<OrderEntity> orders1;
+	
 	@ManyToOne(cascade = CascadeType.ALL)  //consumer added
 	@JoinColumn(name="consumer_id")
 	private ConsumerEntity consumer;
@@ -65,10 +71,12 @@ public class FoodlistEntity {
 	@OneToMany(mappedBy="foodList",cascade = CascadeType.ALL)
     private List<OrderDetailsEntity> orders;
 
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="cart_id")
-    private CartEntity cart;
+//	@ManyToOne(cascade = CascadeType.ALL)
+//	@JoinColumn(name="cart_id")
+//    private CartEntity cart;
 
+	
+	
 	public FoodlistEntity() {}
 
 	public int getId() {
