@@ -25,9 +25,9 @@ const App = () => {
       {/*<SearchBox/>*/}
       {/*<FoodList/>*/}
       {/*
-      <FoodDetails />
+      <FoodDetails />*/}
       <OrderSummary />
-      <OrderPlaced />*/}
+      {/*<OrderPlaced />*/}
       {/*<OrderHistory/>*/}
 
      
@@ -35,17 +35,17 @@ const App = () => {
       <PostSuccess />
     <PostPage />*/}
 
-      <Routes>
+      {/*<Routes>
             {/*<Switch>*/}
-                <Route path="/" element={<Home />} />
+                {/*<Route path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/sign-in" element={<Login />} />
                 <Route path="/sign-up" element={<SignUp />} />
                 <Route path="/Posting" element={<Posting />} />
                 <Route path="/PostSuccess" element={<PostSuccess />} />
-                <Route path="/PostPage" element={<PostPage />} />
+  <Route path="/PostPage" element={<PostPage />} />*/}
             {/*</Switch>*/}
-        </Routes>
+        {/*</Routes>*/}
       <Footer />
       <Scroll />
     </div>
@@ -1613,60 +1613,59 @@ const OrderHistory = () => {
   );
 };
 
+
 {
   /*Consumer OrderSummary*/
 }
 const OrderSummary = () => {
   return (
-    <div className="auth-wrapper">
-      <div className="auth-inner">
-        <div class="row container align-items-center">
-          <ul class="list-group  align-self-center">
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              Samosa --- 50 <img
-                    src="assets\img\post\samosa.jpg"
-                    className="card-img-top"
-                    alt="samosa"
-                  />
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              Veg-Thali ---250
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              Veg-Crisp-Burger ---350
-              <span class="badge badge-primary badge-pill"> </span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      {/*Deliver Address Selection */}
-      <div class="container">
-        <div className="auth-wrapper">
-          <div className="auth-inner">
-            <ul class="list-group">
-              <li>Delivery Address</li>
-              <li class="list-group-item d-flex justify-content-between align-items-left"></li>
+    <div class="row-1">
+      <div className="auth-wrapper">
+        <div className="auth-inner">
+          <div class="row container align-items-left">
+            <ul class="list-group  align-self-left">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Samosa --- &#x20b9;210
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Veg-Thali --- &#x20b9;550
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Veg-Crisp-Burger --- &#x20b9;350
+                <span class="badge badge-primary badge-pill"> </span>
+              </li>
             </ul>
           </div>
-        </div>
-      </div>
-
-      {/*Consumer Place Order & Total*/}
+        
+      {/*Deliver Address Selection */}
       <div class="container">
-        <div className="auth-wrapper">
-          <div className="auth-inner">
-            <h1>
-              TOTAL:
-              <h2>Payment: COD(Cash On Delivery)</h2>
-            </h1>
+        
+            <div class="row-1">
+              
+                <ul class="list-group">
+                  <li class="list-group-item  align-items-left">
+                    <li>Delivery Address</li>
+                  </li>
+                </ul>
 
-            <button type="button" class="btn btn-success">
-              PlaceOrder
-            </button>
+                {/*Consumer Place Order & Total*/}
+                <div >
+                      <pre><li><h5>
+                         TOTAL Price:  &#x20b9;1110
+                        <br/>Payment:  COD(Cash On Delivery)
+                      </h5>
+                      </li>
+                      </pre>
+
+                      <button type="button" class="btn btn-success">
+                        PlaceOrder
+                      </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
