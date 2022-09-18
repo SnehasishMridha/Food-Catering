@@ -1,18 +1,22 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { useEffect,useState } from "react";
+import axios from "axios";
+
+
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Link,
-  Switch,
+  Switch,useNavigate
 } from "react-router-dom";
 
 const App = () => {
   return (
     <div>
       <Header />
-      <OrderPlaced />
+      {/*<OrderPlaced />*/}
     
       {/*<Home />*/}
       {/*<CProfile/>*/}
@@ -30,8 +34,8 @@ const App = () => {
       <PostSuccess />
       <PostPage />*/}
 
-      {/*<Routes>
-            {/*<Switch>
+      <Routes>
+            {/*<Switch>*/}
                 <Route path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/sign-in" element={<Login />} />
@@ -39,8 +43,8 @@ const App = () => {
                 <Route path="/Posting" element={<Posting />} />
                 <Route path="/PostSuccess" element={<PostSuccess />} />
                 <Route path="/PostPage" element={<PostPage />} />
-            {/*</Switch>
-        </Routes>*/}
+            {/*</Switch>*/}
+        </Routes>
       <Footer />
       <Scroll />
     </div>
@@ -504,28 +508,58 @@ const Auth = () => {
 };
 
 // Login Form
+// Login Form
 const Login = () => 
 {
-  let [user,setUser] = useState({email:"",pwd:""})
+  let [email,setEmail] = useState("")
+  let [pwd,setPwd] = useState("")
+  let [actor,setActor] = useState("")
   let navigate = useNavigate()
   function loginHandler()
   {
-    if(document.getElementById("con").value=="consumer")
+    console.log('clicked')
+    if(actor=="aaa")
     {
-         axios.post('http://localhost:8080/signin/logincon',{email:user.email,pwd:user.pwd})
+         axios.post('http://localhost:8080/signin/loginHome/'+email+'/'+pwd,{})
       .then(data =>{
             console.log(data.data)
            if(data.data === "valid")
            {
             alert("success");
-            sessionStorage["email"]=user.email;
-              navigate("/admin")
+            sessionStorage["email"]=email;
+              navigate("/Posting")
            }
-           else if (data.data === "unauthorized")
+           else if (data.data === "invalid")
            {
             alert("failed");
-              navigate("/admin");
+              navigate("/sign_in");
            }
+    
+          }).catch(error => {  console.log(error); alert("error occured") });
+        }      
+     else if(actor=="ccc")
+      {
+        axios.post('http://localhost:8080/signin/logincon/'+email+'/'+pwd,{})
+          .then((data) =>{
+            console.log("customer",data.data)
+           if(data.data === "valid")
+           {
+            console.log("valid");
+            alert("success");
+            //sessionStorage["email"]=email;
+              navigate("/Foodlist")
+            //window.location="/Foodlist"
+           }
+           else if (data.data === "invalid")
+           {
+            alert("failed");
+              navigate("/sign-in");
+           }
+          
+          } ).catch(error => {console.log(error); alert("error occured") });
+      }
+    }
+  
     return (
       <div className="auth-wrapper">
       <div className="auth-inner">
@@ -537,6 +571,7 @@ const Login = () =>
                 type="email"
                 className="form-control"
                 placeholder="Enter username or email"
+                onChange={(e)=>{setEmail(e.target.value)}}
                 required
                 />
             </div>
@@ -546,17 +581,18 @@ const Login = () =>
                 type="password"
                 className="form-control"
                 placeholder="Enter password"
+                onChange={(e)=>{setPwd(e.target.value)}}
                 required
                 />
             </div>
             <div>
-                <input type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+                <input type="radio" name="flexRadioDefault" id="flexRadioDefault1" onClick={(e)=>{setActor("aaa")}}/>
                 <label for="flexRadioDefault1">
                  Home maker
                 </label>
             </div>
             <div>
-                <input type="radio" name="flexRadioDefault" id="flexRadioDefault2" /*checked*//>
+                <input type="radio" name="flexRadioDefault" id="flexRadioDefault2" onClick={(e)=>{setActor("ccc")}}/*checked*//>
                 <label for="flexRadioDefault2">
                  Consumer
                 </label>
@@ -574,7 +610,7 @@ const Login = () =>
                 </div>
             </div>
             <div>
-                <button type="submit" className="main-btn-2 "> {/*btn btn-primary*/}
+                <button type="submit" className="main-btn-2 " onClick={loginHandler}> {/*btn btn-primary*/}
                 Login 
                 </button>
             </div>

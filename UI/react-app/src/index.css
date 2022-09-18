@@ -376,17 +376,6 @@ body {
   padding: 0 10px;
 }
 
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover ~ label {
-    color: #deb217;
-}
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
-    color: #c59b08;
-}
 
 /* Header2 */
 .navbar-area-2 {
@@ -399,11 +388,45 @@ body {
   margin-top: 5em;
   margin-bottom: 0em;
 }
+.test
+{
+  background-color: rgb(251, 240, 120);
+}
 
+.test2
+{
+  background-color: #50cce8;
+}
+
+.test3
+{
+  background-color: #80f67e;
+}
+
+.test4
+{
+  background-color: #f999ea;
+}
+
+.test5
+{
+  background-color: #ffa26c;
+}
+
+.test6
+{
+  background-color: #9a87da;
+}
+
+.test7
+{
+  background-color: #ebff86;
+}
 
 .navbar-2 {
   position: relative;
   display: flex;
+  /*flex-wrap: wrap;*/
   align-items: center;
   justify-content: space-between;
   padding-top: 0.5rem;
@@ -412,5 +435,28 @@ body {
 
 .nav-fill .nav-item-2,
 .nav-fill > .nav-link {
+    /*flex: 1 1 auto;*/
     text-align: center;
 }
+
+.some-class {
+  float: left;
+  clear: none;
+}
+
+label {
+  float: left;
+  clear: none;
+  padding: 0px 1em 0px 8px;
+}
+
+input[type=radio],
+input.radio {
+  float: left;
+  clear: none;
+  margin: 2px 0 0 2px;
+}
+
+
+
+
