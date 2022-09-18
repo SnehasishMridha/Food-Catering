@@ -535,7 +535,7 @@ const Login = () =>
               navigate("/sign_in");
            }
     
-          }).catch(error => {  console.log(error); alert("error occured") });
+          }).catch(error => {  console.log(error); alert("Wrong password") });
         }      
      else if(actor=="ccc")
       {
