@@ -1190,7 +1190,7 @@ function Posting() {
             <input
               type="time"
               className="form-control"
-              
+              step="2"
             />
           </div>
 
