@@ -613,8 +613,10 @@ const Login = () =>
            if(data.data === "valid")
            {
             alert("success");
-            sessionStorage["email"]=email;
-              navigate("/Posting")
+            //sessionStorage["email"]=email;
+            sessionStorage.setItem("email",email);
+            sessionStorage.setItem("password",pwd);
+            navigate("/Posting")
            }
            else if (data.data === "invalid")
            {
@@ -634,7 +636,9 @@ const Login = () =>
             console.log("valid");
             alert("success");
             //sessionStorage["email"]=email;
-              navigate("/Foodlist")
+            sessionStorage.setItem("email",email);
+            sessionStorage.setItem("password",pwd);
+            navigate("/Foodlist")
             //window.location="/Foodlist"
            }
            else if (data.data === "invalid")
