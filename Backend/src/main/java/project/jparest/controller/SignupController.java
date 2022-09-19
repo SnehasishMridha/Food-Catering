@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import project.jparest.dao.ConsumerDao;
 import project.jparest.dao.EmployeeDao;
@@ -18,6 +19,7 @@ import project.jparest.entity.ConsumerEntity;
 import project.jparest.entity.EmployeeEntity;
 import project.jparest.entity.HomemakerEntity;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping(path="/consumer")
 public class SignupController {

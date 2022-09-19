@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import project.jparest.dao.ConsumerDao;
 import project.jparest.dao.EmployeeDao;
 import project.jparest.dao.HomemakerDao;
 
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping(path="/signin")
 public class SigninController {
