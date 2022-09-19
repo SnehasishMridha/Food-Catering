@@ -16,6 +16,7 @@ const App = () => {
   return (
     <div>
       <Header />
+      <CNavBar />
       {/*Cart */}
       {/*<OrderPlaced />*/}
     
@@ -26,7 +27,7 @@ const App = () => {
       {/*<FoodList/>*/}
       {/*
       <FoodDetails />*/}
-      <OrderSummary />
+      {/* <OrderSummary /> */}
       {/*<OrderPlaced />*/}
       {/*<OrderHistory/>*/}
 
@@ -35,17 +36,21 @@ const App = () => {
       <PostSuccess />
     <PostPage />*/}
 
-      {/*<Routes>
-            {/*<Switch>*/}
-                {/*<Route path="/" element={<Home />} />
+     <Routes>           
+               <Route path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/sign-in" element={<Login />} />
                 <Route path="/sign-up" element={<SignUp />} />
                 <Route path="/Posting" element={<Posting />} />
                 <Route path="/PostSuccess" element={<PostSuccess />} />
-  <Route path="/PostPage" element={<PostPage />} />*/}
-            {/*</Switch>*/}
-        {/*</Routes>*/}
+                <Route path="/PostPage" element={<PostPage />} />
+                
+                <Route path="/CProfile" element={<CProfile />} />
+                <Route path="/Search" element={<FoodList />} />
+                <Route path="/OrderHistory" element={<OrderHistory />} />
+                <Route path="/Cart" element={<Cart />} />              
+            
+        </Routes>
       <Footer />
       <Scroll />
     </div>
@@ -141,6 +146,48 @@ const Header2 = () =>
         </li>
         <li class="nav-item">
         <a class="page-scroll" href="#received">Delivery</a>
+        </li>
+        <li class="nav-item">
+        </li>
+        </ul>
+        </div>
+        </nav>
+        </div>
+        </div>
+        </div>
+        </div>
+    </section>
+</div>
+    );
+}
+
+const CNavBar = () =>
+{
+    return(
+
+<div className="App">
+    <section class="header">
+        <div class="navbar-area-2">
+        <div class="container">
+        <div class="row align-items-center">
+        <div class="col-lg-12">
+        <nav class="navbar navbar-expand-lg">
+        <div class="row align-items-center" id="navbarSupportedContent">
+        <ul id="nav" class="navbar-nav ml-auto">
+        <li class="nav-item">
+        <a class="page-scroll" href="/CProfile">Profile</a>
+        </li>
+        <li class="nav-item">
+        <a class="page-scroll" href="Search">Search</a>
+        </li>
+        <li class="nav-item">
+        <a class="page-scroll" href="/OrderHistory">OrderHistory</a>
+        </li>
+        <li class="nav-item">
+        <a class="page-scroll" href="/Cart">Cart</a>
+        </li>
+        <li class="nav-item">
+        <a class="page-scroll" href="/sign-in">Logout</a>
         </li>
         <li class="nav-item">
         </li>
