@@ -1130,7 +1130,7 @@ const Posting=()=> {
            {
             
             console.log("added");
-            alert("successfully added");
+            navigate("/PostSuccess")
            }
            else if (data.data === "failed to add")
            {
@@ -1227,15 +1227,9 @@ const Posting=()=> {
         {/*  <div className="mb-3">
             <label>Time of Service:</label>
             <input
-<<<<<<< HEAD
               type="time" step="2"
               className="form-control" onChange={(e)=>{setTime(e.target.value)}}
               
-=======
-              type="time"
-              className="form-control"
-              step="2"
->>>>>>> 285b7c2e63ac19c634706f3555ba441b633a2d46
             />
   </div>*/}
 
