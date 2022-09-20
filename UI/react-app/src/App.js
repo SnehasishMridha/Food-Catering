@@ -1521,166 +1521,61 @@ const SearchBox = () => {
 };
 
 const FoodList = () => {
-  return (
-    <>
-      <div className="auth-wrapper">
-        <div className="auth-inner">
-          <SearchBox />
-
-          <div class="row container">
-            <div class="row-2">
-              <div class="column">
-                <div class="card">
-                  <img
-                    src="assets\img\post\samosa.jpg"
-                    className="card-img-top"
-                    alt="samosa"
-                  />
-                  <h4 class="card-title">samosa</h4>
-                  <p>Some text</p>
-                  <a
-                    href="https://play.google.com/store/apps"
-                    class="main-btn-2"
-                  >
-                    View
-                  </a>
-                </div>
-              </div>
-
-              <div className="column">
-                <div className="card">
-                  <img
-                    src="assets\img\post\palak.jpg"
-                    className="card-img-top"
-                    alt="palak"
-                  />
-                  <h4 class="card-title">palak-paneer</h4>
-                  <p>Some text</p>
-                  <a
-                    href="https://play.google.com/store/apps"
-                    class="main-btn-2"
-                  >
-                    View
-                  </a>
-                </div>
-              </div>
-
-              <div className="column">
-                <div className="card">
-                  <img
-                    src="assets\img\post\biryani.jpg"
-                    className="card-img-top"
-                    alt="biryani"
-                  />
-                  <h4 class="card-title">biryani</h4>
-                  <p>Some text</p>
-                  <a
-                    href="https://play.google.com/store/apps"
-                    class="main-btn-2"
-                  >
-                    View
-                  </a>
-                </div>
-              </div>
-
-              <div className="column">
-                <div className="card">
-                  <img
-                    src="assets\img\post\noodles.jpg"
-                    className="card-img-top"
-                    alt="noodles"
-                  />
-                  <h4 class="card-title">noodles</h4>
-                  <p>Some text</p>
-                  <a
-                    href="https://play.google.com/store/apps"
-                    class="main-btn-2"
-                  >
-                    View
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="row-2">
-              <div className="column">
-                <div className="card">
-                  <img
-                    src="assets\img\post\roti-sabji.jpg"
-                    className="card-img-top"
-                    alt="roti-sabji"
-                  />
-                  <h4 class="card-title">roti-sabji</h4>
-                  <p>Some text</p>
-                  <a
-                    href="https://play.google.com/store/apps"
-                    class="main-btn-2"
-                  >
-                    View
-                  </a>
-                </div>
-              </div>
-
-              <div className="column">
-                <div className="card">
-                  <img
-                    src="assets\img\post\dosa.jpg"
-                    className="card-img-top"
-                    alt="dosa"
-                  />
-                  <h4 class="card-title">dosa</h4>
-                  <p>Some text</p>
-                  <a
-                    href="https://play.google.com/store/apps"
-                    class="main-btn-2"
-                  >
-                    View
-                  </a>
-                </div>
-              </div>
-
-              <div className="column">
-                <div className="card">
-                  <img
-                    src="assets\img\post\idli.jpg"
-                    className="card-img-top"
-                    alt="idli"
-                  />
-                  <h4 class="card-title">idli</h4>
-                  <p>Some text</p>
-                  <a
-                    href="https://play.google.com/store/apps"
-                    class="main-btn-2"
-                  >
-                    View
-                  </a>
-                </div>
-              </div>
-
-              <div className="column">
-                <div className="card">
-                  <img
-                    src="assets\img\post\pav-bhaji.jpg"
-                    className="card-img-top"
-                    alt="pav-bhaji"
-                  />
-                  <h4 class="card-title">pav-bhaji</h4>
-                  <p>Some text</p>
-                  <a
-                    href="https://play.google.com/store/apps"
-                    class="main-btn-2"
-                  >
-                    View
-                  </a>
+  let [arr,setArr]=useState([]);
+  
+    useEffect(()=>{
+      axios.get('http://localhost:8080/food/getAllFood/',{})
+              .then(Response=>{
+                  if(Response.status===200)
+                  {
+                    setArr(Response.data);
+                  }else{
+                      alert("Data Not Found")
+                  }
+              })
+              .catch(e=>{
+                console.log(e)
+                alert("nothing isn")
+              })       
+  },[])
+  
+    return (
+      <div>
+        {/*<div className="auth-wrapper">
+          <div className="auth-inner">
+            <div class="row container">
+              <div class="row-2">
+                <div className="column">
+                  <div className="card">*/}
+                    {arr.map((li,ind)=>{
+                      return(
+                        <FoodListArray key={ind}
+                        id={li.id}
+                        name={li.name}
+                        date={li.date}
+                        price={li.price}
+                        quantity={li.qnt}
+                        category={li.category}
+                        data={li.data}
+                        unit={li.unit}
+                        ></FoodListArray>
+                      );
+                    })}
+                    {/*<a
+                      href="https://play.google.com/store/apps"
+                      class="main-btn-2"
+                    >
+                      View
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+                  </div>*/}
       </div>
-    </>
-  );
-};
+    );
+  };
 
 const OrderHistory = () => {
   return (
