@@ -3,7 +3,6 @@ import "./App.css";
 import { useEffect,useState } from "react";
 import axios from "axios";
 
-
 import {
   BrowserRouter as Router,
   Routes,
@@ -16,8 +15,8 @@ const App = () => {
   return (
     <div>
       <Header />
-     {/*  <CNavBar /> */}
-      <HMNavBar/>
+     {/*  <CNavBar /> 
+      <HMNavBar/>*/}
       {/*Cart */}
       {/*<OrderPlaced />*/}
     
@@ -50,7 +49,7 @@ const App = () => {
                 <Route path="/Search" element={<FoodList />} />
                 <Route path="/OrderHistory" element={<OrderHistory />} />
                 <Route path="/Cart" element={<Cart />} />   
-
+                <Route path="/Foodlist" element={<FoodList />} />  
                 <Route path="/HMProfile" element={<HMProfile />} />
                 <Route path="/FoodDetails" element={<FoodDetails />} />
                 <Route path="/OrderPlaced" element={<OrderPlaced />} />           
@@ -375,19 +374,36 @@ const Home = () => {
                   Register with us and have the yummiest homemade food at your
                   door now.
                 </p>
-                <a
-                  href="https://play.google.com/store/apps"
-                  class="main-btn btn-hover wow fadeInUp"
-                  data-wow-delay=".6s"
-                >
-                  Download App
-                </a>
+                <div className="d-grid">
+                  <li class="nav-item">
+                    <Link
+                      className="nav-link"
+                      to={"/Posting"}
+                      class="main-btn btn-hover wow fadeInUp"
+                      data-wow-delay=".6s"
+                    >
+                      Home-Maker
+                    </Link>
+                    &nbsp;
+                    <Link
+                      className="nav-link"
+                      to={"/Foodlist"}
+                      class="main-btn btn-hover wow fadeInUp"
+                      data-wow-delay=".6s"
+                    >
+                      Consumer
+                    </Link>
+                    
+                  </li>
+                </div>
               </div>
             </div>
+           
             <div class="col-lg-6">
               <div class="hero-img wow fadeInUp" data-wow-delay=".5s">
                 <img src="assets/img/hero/hero-img.svg" alt="" />
               </div>
+              
             </div>
           </div>
         </div>
