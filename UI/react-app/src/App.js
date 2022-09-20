@@ -655,26 +655,30 @@ const Login = () =>
     
           }).catch(error => {  console.log(error); alert("Wrong password") });
         }      
-     else if(actor=="ccc")
-      {
-        axios.post('http://localhost:8080/signin/logincon/'+email+'/'+pwd,{})
-          .then((data) =>{
-            console.log("customer",data.data)
-           if(data.data === "valid")
-           {
-            console.log("valid");
-            sessionStorage.setItem("email",email);
-            // navigate("/Foodlist")
-            window.location="/Foodlist";
-           }
-           else if (data.data === "invalid")
-           {
-            alert("failed");
-            window.location="/sign-in";
-           }
-          
-          } ).catch(error => {console.log(error); alert("error occured") });
-      }
+        else if(actor=="ccc")
+        {
+          axios.post('http://localhost:8080/signin/logincon/'+email+'/'+pwd,{})
+            .then((response) =>{
+              console.log("customer",response.data)
+             if(response.data === null)
+             {
+                alert("failed");
+                navigate("/sign-in");                       
+             }
+             else
+             {
+              console.log("valid");
+              alert("success");
+              sessionStorage.setItem("email",email);
+              let cid=response.data.id;
+              console.log("home id : ",cid);
+              sessionStorage.setItem("id",cid);
+              // navigate("/Foodlist")
+              window.location="/Foodlist";     
+             }
+            
+            } ).catch(error => {console.log(error); alert("error occured") });
+        }
     }
     return (
       <div className="auth-wrapper">
