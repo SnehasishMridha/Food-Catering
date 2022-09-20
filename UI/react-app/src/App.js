@@ -54,6 +54,7 @@ const App = () => {
                 <Route path="/FoodDetails" element={<FoodDetails />} />
                 <Route path="/OrderPlaced" element={<OrderPlaced />} />           
             
+                <Route path="/Logout" element={<Logout />} /> 
         </Routes>
       <Footer />
       <Scroll />
@@ -611,13 +612,12 @@ const Auth = () => {
 };
 
 // Login Form
-// Login Form
 const Login = () => 
 {
   let [email,setEmail] = useState("")
   let [pwd,setPwd] = useState("")
   let [actor,setActor] = useState("")
-  let navigate = useNavigate()
+
   function loginHandler()
   {
     console.log('clicked')
@@ -628,16 +628,13 @@ const Login = () =>
             console.log(data.data)
            if(data.data === "valid")
            {
-            alert("success");
-            //sessionStorage["email"]=email;
-            sessionStorage.setItem("email",email);
-            sessionStorage.setItem("password",pwd);
-            navigate("/Posting")
+            //alert("success");
+             sessionStorage.setItem("email",email);
+             window.location="/Posting";
            }
            else if (data.data === "invalid")
            {
-            alert("failed");
-              navigate("/sign_in");
+            window.location="/sign-in";
            }
     
           }).catch(error => {  console.log(error); alert("Wrong password") });
@@ -650,23 +647,19 @@ const Login = () =>
            if(data.data === "valid")
            {
             console.log("valid");
-            alert("success");
-            //sessionStorage["email"]=email;
             sessionStorage.setItem("email",email);
-            sessionStorage.setItem("password",pwd);
-            navigate("/Foodlist")
-            //window.location="/Foodlist"
+            // navigate("/Foodlist")
+            window.location="/Foodlist";
            }
            else if (data.data === "invalid")
            {
             alert("failed");
-              navigate("/sign-in");
+            window.location="/sign-in";
            }
           
           } ).catch(error => {console.log(error); alert("error occured") });
       }
     }
-  
     return (
       <div className="auth-wrapper">
       <div className="auth-inner">
@@ -729,7 +722,6 @@ const Login = () =>
       </div>
   );
 }
-
 // Sign up
 // Sign up
 const SignUp = () => {
