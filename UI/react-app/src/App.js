@@ -633,19 +633,24 @@ const Login = () =>
     console.log('clicked')
     if(actor=="aaa")
     {
-         axios.post('http://localhost:8080/signin/loginHome/'+email+'/'+pwd,{})
-      .then(data =>{
-            console.log(data.data)
-           if(data.data === "valid")
+      axios.post('http://localhost:8080/signin/loginHome/'+email+'/'+pwd,{})
+      .then(response =>{
+            console.log(response.data)
+           if(response.data ===null )
            {
-            //alert("success");
-            sessionStorage.setItem("email",email);
-            window.location="/Posting";
-           //navigate("/Posting")
+            alert("failed");
+            navigate("/sign_in");
            }
-           else if (data.data === "invalid")
+           else
            {
-            window.location="/sign-in";
+            alert("success");
+            sessionStorage.setItem("email",email);
+            let hid=response.data.id;
+            console.log("home id : ",hid);
+            sessionStorage.setItem("id",hid);
+             window.location="/Posting";
+            //navigate("/Posting")
+           
            }
     
           }).catch(error => {  console.log(error); alert("Wrong password") });
