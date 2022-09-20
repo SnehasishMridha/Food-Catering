@@ -167,8 +167,13 @@ const Header2 = () =>
     );
 }
 
+
 const CNavBar = () =>
 {
+  const f2=()=>{
+    sessionStorage.removeItem("email");
+    window.location="/home"
+  }
     return(
 
 <div className="App">
@@ -193,7 +198,8 @@ const CNavBar = () =>
         <a class="page-scroll" href="/Cart">Cart</a>
         </li>
         <li class="nav-item">
-        <a class="page-scroll" href="/sign-in">Logout</a>
+        {/* <a class="page-scroll" href="/sign-in">Logout</a> */}
+        <a class="page-scroll"  onClick={()=>{f2()}}>Logout</a>
         </li>
         <li class="nav-item">
         </li>
@@ -211,6 +217,10 @@ const CNavBar = () =>
 
 const HMNavBar = () =>
 {
+  const f1=()=>{
+    sessionStorage.removeItem("email");
+    window.location="/home"
+  }
     return(
 
 <div className="App">
@@ -229,7 +239,7 @@ const HMNavBar = () =>
         <a class="page-scroll" href="/Posting">Post</a>
         </li>
         <li class="nav-item">
-        <a class="page-scroll" href="/sign-in">Logout</a>
+        <a class="page-scroll"  onClick={()=>{f1()}}>Logout</a>
         </li>
         <li class="nav-item">
         </li>
@@ -613,8 +623,9 @@ const Login = () =>
            if(data.data === "valid")
            {
             //alert("success");
-             sessionStorage.setItem("email",email);
-             window.location="/Posting";
+            sessionStorage.setItem("email",email);
+            window.location="/Posting";
+           //navigate("/Posting")
            }
            else if (data.data === "invalid")
            {
