@@ -55,6 +55,7 @@ const App = () => {
                 <Route path="/FoodDetails" element={<FoodDetails />} />
                 <Route path="/OrderPlaced" element={<OrderPlaced />} />           
             
+                <Route path="/Logout" element={<Logout />} /> 
         </Routes>
       <Footer />
       <Scroll />
@@ -612,6 +613,7 @@ const Login = () =>
            if(data.data === "valid")
            {
             //alert("success");
+             sessionStorage.setItem("email",email);
              window.location="/Posting";
            }
            else if (data.data === "invalid")
@@ -629,7 +631,8 @@ const Login = () =>
            if(data.data === "valid")
            {
             console.log("valid");
-             // navigate("/Foodlist")
+            sessionStorage.setItem("email",email);
+            // navigate("/Foodlist")
             window.location="/Foodlist";
            }
            else if (data.data === "invalid")
