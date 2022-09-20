@@ -39,17 +39,19 @@ public class ConsumerDao {
 		return Optional.ofNullable(repo.findById(id).get());
 	}
 	
-	public String getCheck(String consumer_email_id,String consumer_password)
+	public ConsumerEntity getCheck(String consumer_email_id,String consumer_password)
 	{
 		ConsumerEntity user = repo.findByEmail(consumer_email_id);
-		
+
 		if(user!=null)
 		{
-		if(consumer_password.equals(user.getPassword()))
-		    return "valid";
+			if(consumer_password.equals(user.getPassword()))
+				return user;
+			else 
+				return null;
 		}
 		else
-			return "invalid";
+			return null;
 	}
 	
 	public String addToProfile(String address,String email,int pincode,Blob picture,int mob)

@@ -26,9 +26,9 @@ public class SigninController {
 	HomemakerDao h;
 	
 	@PostMapping("logincon/{email}/{pwd}")
-	public String getConsumer(@PathVariable String email, @PathVariable String pwd) 
+	public ConsumerEntity getConsumer(@PathVariable String email, @PathVariable String pwd) 
 	{
-		String check=consumer.getCheck(email,pwd);
+		ConsumerEntity check=consumer.getCheck(email,pwd);
 		return check;
 	}
 	
