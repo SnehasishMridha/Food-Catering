@@ -128,12 +128,12 @@ public class HomemakerEntity {
 		this.password = password;
 	}
 
-	public String getEmail_id() {
+	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail_id(String email_id) {
-		this.email = email_id;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getAddress() {
