@@ -7,6 +7,8 @@ import Header2 from "./components/Header2";
 import CNavBar from "./components/CNavBar";
 import HMNavBar from "./components/HMNavBar";
 import Footer from "./components/Footer";
+import Scroll from "./components/Scroll";
+
 
 import {
   BrowserRouter as Router,
@@ -76,13 +78,7 @@ const App = () => {
 // Footer
 
 
-const Scroll = () => {
-  return (
-    <a href="#" class="scroll-top btn-hover">
-      <i class="lni lni-chevron-up"></i>
-    </a>
-  );
-};
+
 
 // Home page
 const Home = () => {
