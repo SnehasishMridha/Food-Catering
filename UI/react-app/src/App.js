@@ -22,6 +22,7 @@ import FoodDetails from "./components/FoodDetails";
 import Cart from "./components/Cart";
 import Review from "./components/Review";
 import Posting from "./components/Posting";
+import PostSuccess from "./components/PostSuccess";
 
 import {
   BrowserRouter as Router,
@@ -91,28 +92,7 @@ const Auth = () => {
 
 
 
-//Post success
-function PostSuccess() {
-  return (
-    <div className="auth-wrapper">
-      <div className="auth-inner">
-        <h3>Posted Successfully</h3>
-        <div className="d-grid">
-          <li class="nav-item">
-            <Link
-              className="nav-link"
-              to={"/PostPage"}
-              class="main-btn btn-hover wow fadeInUp"
-              data-wow-delay=".6s"
-            >
-              Take Me to My Post
-            </Link>
-          </li>
-        </div>
-      </div>
-    </div>
-  );
-}
+
 
 //Post Page
 function PostPage() {
