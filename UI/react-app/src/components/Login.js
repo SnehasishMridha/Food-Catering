@@ -5,6 +5,7 @@ import axios from "axios";
 import { Link } from 'react-router-dom'
 
 // Login Form
+// Login Form
 const Login = () => 
 {
   let [email,setEmail] = useState("")
@@ -17,36 +18,38 @@ const Login = () =>
     if(actor=="aaa")
     {
       axios.post('http://localhost:8080/signin/loginHome/'+email+'/'+pwd,{})
-      .then(response =>{
+      .then((response) =>{
             console.log(response.data)
            if(response.data ===null )
            {
             alert("failed");
-            navigate("/sign_in");
+            //navigate("/sign-in");
+            window.location="/sign-in";
            }
            else
-           {
-            alert("success");
+           {           
             sessionStorage.setItem("email",email);
-            let hid=response.data.id;
-            console.log("home id : ",hid);
+            console.log(response.data);
+            let hid=response.data.id;        
+            console.log("home id :",hid);
             sessionStorage.setItem("id",hid);
-             window.location="/Posting";
+            alert("success");
+            window.location="/Posting";
             //navigate("/Posting")
            
            }
-    
           }).catch(error => {  console.log(error); alert("Wrong password") });
         }      
-        else if(actor=="ccc")
-        {
-          axios.post('http://localhost:8080/signin/logincon/'+email+'/'+pwd,{})
+     else if(actor=="ccc")
+      {
+        axios.post('http://localhost:8080/signin/logincon/'+email+'/'+pwd,{})
             .then((response) =>{
               console.log("customer",response.data)
              if(response.data === null)
              {
                 alert("failed");
-                navigate("/sign-in");                       
+                //navigate("/sign-in"); 
+                window.location="/sign-in";                      
              }
              else
              {
@@ -56,12 +59,13 @@ const Login = () =>
               let cid=response.data.id;
               console.log("home id : ",cid);
               sessionStorage.setItem("id",cid);
-              // navigate("/Foodlist")
-              window.location="/Foodlist";     
+              //navigate("/FoodList")
+              window.location="/FoodList";     
              }
             
-            } ).catch(error => {console.log(error); alert("error occured") });
-        }
+          
+          } ).catch(error => {console.log(error); alert("error occured") });
+      }
     }
     return (
       <div className="auth-wrapper">
@@ -89,13 +93,13 @@ const Login = () =>
                 />
             </div>
             <div>
-                <input type="radio" name="flexRadioDefault" id="flexRadioDefault1" onClick={(e)=>{setActor("aaa")}}/>
+                <input type="radio" name="flexRadioDefault" id="flexRadioDefault1" onBlur={(e)=>{setActor("aaa")}}/>
                 <label for="flexRadioDefault1">
                  Home maker
                 </label>
             </div>
             <div>
-                <input type="radio" name="flexRadioDefault" id="flexRadioDefault2" onClick={(e)=>{setActor("ccc")}}/*checked*//>
+                <input type="radio" name="flexRadioDefault" id="flexRadioDefault2" onBlur={(e)=>{setActor("ccc")}}/checked//>
                 <label for="flexRadioDefault2">
                  Consumer
                 </label>
@@ -113,7 +117,7 @@ const Login = () =>
                 </div>
             </div>
             <div>
-                <button type="submit" className="main-btn-2 " onClick={loginHandler}> {/*btn btn-primary*/}
+                <button type="submit" className="main-btn-2 " onClick={loginHandler}> {/btn btn-primary/}
                 Login 
                 </button>
             </div>
