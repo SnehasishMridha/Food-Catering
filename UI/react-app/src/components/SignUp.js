@@ -1,7 +1,7 @@
 //import logo from "./logo.svg";
 //import "./App.css";
-//import { useEffect,useState } from "react";
-//import axios from "axios";
+import { useEffect,useState } from "react";
+import axios from "axios";
 import { Link, } from 'react-router-dom'
 
 // Sign up
