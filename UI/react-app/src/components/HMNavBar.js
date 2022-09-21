@@ -24,9 +24,9 @@ const HMNavBar = () =>
         <li class="nav-item">
         <a class="page-scroll" href="/HMProfile">Profile</a>
         </li>
-        <li class="nav-item">
+        {/*<li class="nav-item">
         <a class="page-scroll" href="/Posting">Post</a>
-        </li>
+    </li>*/}
         <li class="nav-item">
         <a class="page-scroll"  onClick={()=>{f1()}}>Logout</a>
         </li>
