@@ -17,6 +17,7 @@ import SearchBox from "./components/SearchBox";
 import FoodList from "./components/FoodList";
 import OrderHistory from "./components/OrderHistory";
 import OrderSummary from "./components/OrderSummary";
+import OrderPlaced from "./components/OrderPlaced";
 
 import {
   BrowserRouter as Router,
@@ -407,18 +408,7 @@ function PostPage() {
 
 
 //OrderPlaced
-const OrderPlaced = () => {
-  return (
-    <div className="auth-wrapper">
-      <div className="auth-inner">
-        <div class="container">
-          <h1>OrderPlaced..!</h1>
-          <h2>Order Details</h2>
-        </div>
-      </div>
-    </div>
-  );
-};
+
 
 {
   /*FoodDetails */
