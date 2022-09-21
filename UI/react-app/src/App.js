@@ -18,6 +18,8 @@ import FoodList from "./components/FoodList";
 import OrderHistory from "./components/OrderHistory";
 import OrderSummary from "./components/OrderSummary";
 import OrderPlaced from "./components/OrderPlaced";
+import FoodDetails from "./components/FoodDetails";
+import Cart from "./components/Cart";
 
 import {
   BrowserRouter as Router,
@@ -410,82 +412,10 @@ function PostPage() {
 //OrderPlaced
 
 
-{
-  /*FoodDetails */
-}
-const FoodDetails = () => {
-  return (
-    <div className="auth-wrapper">
-      <div className="auth-inner">
-        <div class="container">
-          <h1>Noodles ---- Homemaker Name</h1>
-          <h2>Pincode- 208001</h2>
-
-          <span class="border border-secondary">
-            <div class="container">
-              <h1>Food Description</h1>
-              <p>
-                Category- Veg/Non-Veg <br /> Quantity- 500gm <br /> Servings- 4
-              </p>
-            </div>
-          </span>
-          <col-2>
-            <button type="button" class="btn btn-warning">
-              Add To Cart
-            </button>
-          </col-2>
-          <col-4>
-            <button type="button" class="btn btn-success">
-              Place Order Now
-            </button>
-          </col-4>
-
-          {/*Images Tiles*/}
-          <div class="container align-items-right">
-            <img
-              src="assets\img\post\noodles.jpg"
-              className="card-img-top rounded"
-              alt="noodles"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+//FoodDetails
 
 
-{/*Cart Page */}
-const Cart = () => {
-  return(
-    <div className="auth-wrapper">
-      <div className="auth-inner">
-        <h2>CART</h2>
-        <div class = "container border border-secondary">
-          <pre>
-            <h4>1. Samosa - </h4>
-             <h4>Homemaker Name</h4>
-            <h5>Quantity : 1 <br/> Price :&#x20b9;210</h5>
-             
-             <hr></hr>
-             <h4>2. Noodle - </h4>
-             <h4>Homemaker Name</h4>
-            <h5>Quantity : 1 <br/> Price : &#x20b9;290</h5>
+//Cart Page
 
-            <hr></hr>
-            <h5>Total Price: &#x20b9;500</h5>
-
-          </pre>
-        </div>
-        <div>
-        <button type="button" class="btn btn-success">
-              Place Order Now
-            </button>
-        </div>
-
-      </div>
-      </div>
-  );
-};
 
 export default App;
