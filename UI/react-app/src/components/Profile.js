@@ -29,7 +29,12 @@ const Profile = () => {
          <ul class="list-group">          
    <li class="list-group-item" >FirstName:{obj.firstname}</li>
    <li class="list-group-item">LastName: {obj.lastname}</li>
-   
+   <li class="list-group-item">Mobile Number:{obj.mobile}</li>
+   <li class="list-group-item">Username: {obj.username}</li>
+   <li class="list-group-item">Email: {obj.email}</li>
+   <li class="list-group-item">Password: {obj.password}</li>
+   <li class="list-group-item">Address: {obj.address}</li>
+   <li class="list-group-item">Pincode: {obj.pincode}</li>
  </ul>
  
  </div>
