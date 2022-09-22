@@ -1,5 +1,5 @@
 //import logo from "./logo.svg";
-//import "./App.css";
+import "../App.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom'
@@ -27,7 +27,8 @@ const Login = () =>
             window.location="/sign-in";
            }
            else
-           {           
+           {
+           
             sessionStorage.setItem("email",email);
             console.log(response.data);
             let hid=response.data.id;        
@@ -35,8 +36,7 @@ const Login = () =>
             sessionStorage.setItem("id",hid);
             alert("success");
             window.location="/Posting";
-            //navigate("/Posting")
-           
+            //navigate("/Posting")          
            }
           }).catch(error => {  console.log(error); alert("Wrong password") });
         }      
@@ -72,6 +72,18 @@ const Login = () =>
       <div className="auth-inner">
         <form>
             <h3>Login</h3>
+            <div>
+                <input type="radio" name="a" id="a" onBlur={(e)=>{setActor("aaa")}}/>
+                <label htmlFor="flexRadioDefault1">
+                 Home maker
+                </label>
+            </div>
+            <div>
+                <input type="radio" name="a" id="b" onBlur={(e)=>{setActor("ccc")}}/*checked*//>
+                <label htmlFor="flexRadioDefault2">
+                 Consumer
+                </label>
+            </div><br/><br/>
             <div className="mb-3">
                 <label>Email username or address</label>
                 <input
@@ -92,18 +104,7 @@ const Login = () =>
                 required
                 />
             </div>
-            <div>
-                <input type="radio" name="flexRadioDefault" id="flexRadioDefault1" onBlur={(e)=>{setActor("aaa")}}/>
-                <label for="flexRadioDefault1">
-                 Home maker
-                </label>
-            </div>
-            <div>
-                <input type="radio" name="flexRadioDefault" id="flexRadioDefault2" onBlur={(e)=>{setActor("ccc")}}/checked//>
-                <label for="flexRadioDefault2">
-                 Consumer
-                </label>
-            </div><br/><br/>
+           
             <div className="mb-3">
                 <div className="custom-control custom-checkbox">
                     <input
@@ -117,7 +118,7 @@ const Login = () =>
                 </div>
             </div>
             <div>
-                <button type="submit" className="main-btn-2 " onClick={loginHandler}> {/btn btn-primary/}
+                <button type="submit" className="main-btn-2 " onClick={loginHandler}> {/*btn btn-primary*/}
                 Login 
                 </button>
             </div>

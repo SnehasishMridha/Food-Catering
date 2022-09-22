@@ -3,13 +3,16 @@
 //import { useEffect,useState } from "react";
 //import axios from "axios";
 import { Link, } from 'react-router-dom'
-
+import CNavBar from "./CNavBar";
 //Cart Page
 const Cart = () => {
     return(
+      <div> <CNavBar />
       <div className="auth-wrapper">
         <div className="auth-inner">
+       
           <h2>CART</h2>
+
           <div class = "container border border-secondary">
             <pre>
               <h4>1. Samosa - </h4>
@@ -32,6 +35,7 @@ const Cart = () => {
               </button>
           </div>
   
+        </div>
         </div>
         </div>
     );

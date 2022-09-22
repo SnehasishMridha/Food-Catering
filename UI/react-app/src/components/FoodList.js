@@ -1,9 +1,10 @@
 //import logo from "./logo.svg";
 //import "./App.css";
+import FoodListArray from "../FoodListArray"
 import { useEffect,useState } from "react";
 import axios from "axios";
 import { Link, } from 'react-router-dom'
-
+import CNavBar from "./CNavBar";
 const FoodList = () => {
     let [arr,setArr]=useState([]);
     
@@ -25,6 +26,7 @@ const FoodList = () => {
     
       return (
         <div>
+            <CNavBar />
           {/*<div className="auth-wrapper">
             <div className="auth-inner">
               <div class="row container">

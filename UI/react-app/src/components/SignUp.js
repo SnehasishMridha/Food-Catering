@@ -82,7 +82,7 @@ const SignUp = () => {
               <input
                 type="radio"
                 name="flexRadioDefault"
-                id="flexRadioDefault2" /checked/
+                id="flexRadioDefault2" /*checked*/
                 onClick={(e)=>{setActor("ccc")}}
               />
               <label for="flexRadioDefault2">Consumer</label>
@@ -111,7 +111,7 @@ const SignUp = () => {
               <input
                 type="number"
                 className="form-control"
-                placeholder="+91-****"
+                placeholder="+91-**********"
                 min="7000000000"
                 max="9999999999" onChange={(e)=>{setMobile(e.target.value)}}
                 required  
@@ -167,7 +167,7 @@ const SignUp = () => {
             </div>
             <div className="d-grid">
               <button type="submit" className="main-btn-2" onClick={regHandler}>
-                {/btn btn-primary/}
+                {/*btn btn-primary*/}
                 Sign Up
               </button>
             </div>
@@ -182,7 +182,7 @@ const SignUp = () => {
   
 
 // Home-maker User Profile
-const HMProfile = () => {
+{/*const HMProfile = () => {
   return (
     <div className="auth-wrapper">
       <div className="auth-inner">
@@ -205,7 +205,7 @@ const HMProfile = () => {
                 <label for="flexRadioDefault2">
                  Consumer
                 </label>
-            </div><br/>*/}
+            </div><br/>
           <div className="mb-3">
             <label>First name</label>
             <input
@@ -298,7 +298,7 @@ const HMProfile = () => {
           </div>
           {/*<p className="forgot-password text-right">
             Already registered <a href="/sign-in">sign in?</a>
-        </p>*/}
+        </p>
         </form>
       </div>
     </div>
@@ -329,7 +329,7 @@ const CProfile = () => {
                 <label for="flexRadioDefault2">
                  Consumer
                 </label>
-            </div><br/>*/}
+            </div><br/>
           <div className="mb-3">
             <label>First name</label>
             <input
@@ -422,7 +422,7 @@ const CProfile = () => {
           </div>
           {/*<p className="forgot-password text-right">
             Already registered <a href="/sign-in">sign in?</a>
-        </p>*/}
+        </p>
         </form>
       </div>
     </div>
@@ -491,6 +491,6 @@ function Review() {
       </div>
     </div>
   );
-}
+}*/}
 
 export default SignUp;

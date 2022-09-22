@@ -9,14 +9,13 @@ import HMNavBar from "./components/HMNavBar";
 import Footer from "./components/Footer";
 import Scroll from "./components/Scroll";
 import Home from "./components/Home";
+import FoodListArray from "./FoodListArray";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import HMProfile from "./components/HMProfile";
-import CProfile from "./components/CProfile";
 import SearchBox from "./components/SearchBox";
 import FoodList from "./components/FoodList";
 import OrderHistory from "./components/OrderHistory";
-import OrderSummary from "./components/OrderSummary";
 import OrderPlaced from "./components/OrderPlaced";
 import FoodDetails from "./components/FoodDetails";
 import Cart from "./components/Cart";
@@ -24,7 +23,7 @@ import Review from "./components/Review";
 import Posting from "./components/Posting";
 import PostSuccess from "./components/PostSuccess";
 import PostPage from "./components/PostPage";
-
+import Logout from "./Logout"
 import {
   BrowserRouter as Router,
   Routes,
@@ -65,9 +64,7 @@ const App = () => {
                 <Route path="/sign-up" element={<SignUp />} />
                 <Route path="/Posting" element={<Posting />} />
                 <Route path="/PostSuccess" element={<PostSuccess />} />
-                <Route path="/PostPage" element={<PostPage />} />
-                
-                <Route path="/CProfile" element={<CProfile />} />
+                <Route path="/PostPage" element={<PostPage />} />                          
                 <Route path="/Search" element={<FoodList />} />
                 <Route path="/OrderHistory" element={<OrderHistory />} />
                 <Route path="/Cart" element={<Cart />} />   
@@ -75,7 +72,6 @@ const App = () => {
                 <Route path="/HMProfile" element={<HMProfile />} />
                 <Route path="/FoodDetails" element={<FoodDetails />} />
                 <Route path="/OrderPlaced" element={<OrderPlaced />} />           
-            
                 <Route path="/Logout" element={<Logout />} /> 
         </Routes>
       <Footer />
