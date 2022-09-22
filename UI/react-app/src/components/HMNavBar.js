@@ -22,7 +22,7 @@ const HMNavBar = () =>
         <div class="row align-items-center" id="navbarSupportedContent">
         <ul id="nav" class="navbar-nav ml-auto">
         <li class="nav-item">
-        <a class="page-scroll" href="/HMProfile">Profile</a>
+        <a class="page-scroll" href="/Profile">Profile</a>
         </li>
         {/*<li class="nav-item">
         <a class="page-scroll" href="/Posting">Post</a>

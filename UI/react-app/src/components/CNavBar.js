@@ -21,15 +21,15 @@ const CNavBar = () =>
         <nav class="navbar navbar-expand-lg">
         <div class="row align-items-center" id="navbarSupportedContent">
         <ul id="nav" class="navbar-nav ml-auto">
-        {/*<li class="nav-item">
-        <a class="page-scroll" href="/CProfile">Profile</a>
-        </li>
         <li class="nav-item">
+        <a class="page-scroll" href="/Profile">Profile</a>
+        </li>
+        {/*<li class="nav-item">
         <a class="page-scroll" href="Search">Search</a>
-    </li>*/}
+    </li>
         <li class="nav-item">
         <a class="page-scroll" href="/OrderHistory">OrderHistory</a>
-        </li>
+        </li>*/}
         <li class="nav-item">
         <a class="page-scroll" href="/Cart">Cart</a>
         </li>

@@ -4,6 +4,7 @@ import { useEffect,useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link, } from 'react-router-dom'
+import HMNavBar from "./HMNavBar";
 
 //Homemaker posting
 const Posting=()=> {
@@ -46,6 +47,8 @@ const Posting=()=> {
         }
   
     return (
+      <div>
+        <HMNavBar/>
       <div className="auth-wrapper">
         <div className="auth-inner">
           <form>
@@ -152,6 +155,7 @@ const Posting=()=> {
             </div>
           </form>
         </div>
+      </div>
       </div>
     );
   }

@@ -12,7 +12,7 @@ import Home from "./components/Home";
 import FoodListArray from "./FoodListArray";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
-import HMProfile from "./components/HMProfile";
+import Profile from "./components/Profile";
 import SearchBox from "./components/SearchBox";
 import FoodList from "./components/FoodList";
 import OrderHistory from "./components/OrderHistory";
@@ -72,7 +72,7 @@ const App = () => {
                 <Route path="/OrderHistory" element={<OrderHistory />} />
                 <Route path="/Cart" element={<Cart />} />   
                 <Route path="/Foodlist" element={<FoodList />} />  
-                <Route path="/HMProfile" element={<HMProfile />} />
+                <Route path="/Profile" element={<Profile />} />
                 <Route path="/FoodDetails" element={<FoodDetails />} />
                 <Route path="/OrderPlaced" element={<OrderPlaced />} />           
                 <Route path="/Logout" element={<Logout />} /> 
