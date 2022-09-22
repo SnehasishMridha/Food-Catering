@@ -3,6 +3,7 @@ import "../App.css";
 //import { useEffect,useState } from "react";
 //import axios from "axios";
 import { Link, } from 'react-router-dom'
+import Header2 from "./Header2";
 import Services from "./Services";
 import About from "./About";
 import How from "./How";
@@ -12,6 +13,7 @@ import Received from "./Received";
 const Home = () => {
     return (
       <div>
+        <Header2/>
         <section id="home" class="hero-section">
           <div class="hero-shape">
             <img src="assets/img/hero/hero-shape.svg" alt="" class="shape" />

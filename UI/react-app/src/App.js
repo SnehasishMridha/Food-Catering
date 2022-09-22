@@ -24,6 +24,8 @@ import Posting from "./components/Posting";
 import PostSuccess from "./components/PostSuccess";
 import PostPage from "./components/PostPage";
 import Logout from "./Logout"
+import Forgot from "./components/Forgot";
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -36,8 +38,9 @@ const App = () => {
   return (
     <div>
       <Header />
-     {/*  <CNavBar /> 
-      <HMNavBar/>*/}
+      {/*<Forgot />*/}
+     {/*  <CNavBar /> */}
+      {/*<HMNavBar/>*/}
       {/*Cart */}
       {/*<OrderPlaced />*/}
     
@@ -73,6 +76,7 @@ const App = () => {
                 <Route path="/FoodDetails" element={<FoodDetails />} />
                 <Route path="/OrderPlaced" element={<OrderPlaced />} />           
                 <Route path="/Logout" element={<Logout />} /> 
+                <Route path="/Forgot" element={<Forgot />} /> 
         </Routes>
       <Footer />
       <Scroll />

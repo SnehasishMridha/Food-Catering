@@ -105,25 +105,14 @@ const Login = () =>
                 />
             </div>
            
-            <div className="mb-3">
-                <div className="custom-control custom-checkbox">
-                    <input
-                    type="checkbox"
-                    className="custom-control-input"
-                    id="customCheck1"
-                    />
-                    <label className="custom-control-label" htmlFor="customCheck1">
-                    Remember me
-                    </label>
-                </div>
-            </div>
+
             <div>
                 <button type="submit" className="main-btn-2 " onClick={loginHandler}> {/*btn btn-primary*/}
                 Login 
                 </button>
             </div>
             <p className="forgot-password text-right">
-            Forgot <a href="#">password?</a>
+            <a href="/Forgot">Forgot password?</a>
             </p>
         </form>
       </div>
