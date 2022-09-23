@@ -64,37 +64,6 @@ const SignUp = () => {
         window.location="/sign-up"
     })
   } }
-
-  const validateMobile = (e) =>
-  {
-    setMobile(e.target.value.replace(/\D/g, ''))
-    /*setMobile(e.target.value)*/
-  }
-
-  const validatePIN = (e) =>
-  {
-    setPincode(e.target.value.replace(/\D/g, ''))
-    /*setPincode(e.target.value)*/
-  }
-
-  const [message, setMessage] = useState('');
-  // The regular exprssion to validate the email pattern
-  const emailRegex = /\S+@\S+\.\S+/;
-  const validateEmail = (e) =>
-  {
-    if (emailRegex.test(e.target.value)) 
-    {
-      setEmail(e.target.value)
-      setMessage('Your email looks good!');
-    } 
-    else 
-    {
-      setMessage('Please enter a valid email!');
-    }
-
-    /*setEmail(e.target.value)*/
-  }
-  
     return (
       <div className="auth-wrapper">
         <div className="auth-inner">
@@ -137,21 +106,17 @@ const SignUp = () => {
                 required
               />
             </div>
-
            <div className="mb-3">
               <label>Mobile number (10 digits only) </label>
               <input
-                type="text"
+                type="number"
                 className="form-control"
                 placeholder="+91-**********"
-                /*min="7000000000"
-                max="9999999999"*/ onChange={validateMobile}
-                maxlength="10" 
-                value={mobile}
+                min="7000000000"
+                max="9999999999" onChange={(e)=>{setMobile(e.target.value)}}
                 required  
               />
-            </div>
-
+    </div>
             <div className="mb-3">
               <label>Username *</label>
               <input
@@ -161,19 +126,15 @@ const SignUp = () => {
                 required
               />
             </div>
-
             <div className="mb-3">
               <label>Email ID *</label>
               <input
                 type="email"
                 className="form-control"
-                placeholder="Enter email id" onChange={validateEmail}
-                /*value={email}*/
+                placeholder="Enter email id" onChange={(e)=>{setEmail(e.target.value)}}
                 required
               />
-                      {message}
             </div>
-
             <div className="mb-3">
               <label>Password *</label>
               <input
@@ -191,20 +152,16 @@ const SignUp = () => {
               required
               />
              </div>
-
             <div className="mb-3">
               <label>PIN code *</label>
               <input
-                type="text"
+                type="number"
                 className="form-control"
                 placeholder="Enter PIN code"
-                /*min="100000" 
-                max="9999999"*/  onChange={validatePIN} required
-                maxlength="6"
-                value={pincode}
+                min="100000" 
+                max="9999999"  onChange={(e)=>{setPincode(e.target.value)}} required
               />
-            </div>
-
+  </div>
             <div className="mb-3">
               <small>Fields marked with * are mandatory</small>
             </div>
