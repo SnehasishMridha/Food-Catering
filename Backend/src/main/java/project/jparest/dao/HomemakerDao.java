@@ -63,5 +63,15 @@ public class HomemakerDao {
 		return "added";
 	}
 	
-	
+	public HomemakerEntity changeHomePwd(@PathVariable String email,@PathVariable String newpwd)
+	{
+		HomemakerEntity h=repo.findByEmail(email);
+		if(h!=null)
+		{
+			h.setPassword(newpwd);
+			repo.save(h);
+			return h;
+		}
+		return null;
+	}
 }
