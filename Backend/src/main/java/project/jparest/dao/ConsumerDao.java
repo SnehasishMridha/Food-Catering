@@ -66,15 +66,19 @@ public class ConsumerDao {
 		return "added";
 	}
 
-	public ConsumerEntity changePassword(@PathVariable String email,@PathVariable String oldpwd,@PathVariable String newpwd)
-	{
-		ConsumerEntity c=repo.findByEmail(email);
-		c.setPassword(newpwd);
-		repo.save(c);
-		return c;
-	}
 
-	
+	public ConsumerEntity changePassword(@PathVariable String email,@PathVariable String newpwd)
+	{
+		System.out.println(email+newpwd);
+		ConsumerEntity c=repo.findByEmail(email);
+		if(c!=null)
+		{
+			c.setPassword(newpwd);
+			repo.save(c);
+			return c;
+		}
+		return null;
+	}
 }
 
 		
