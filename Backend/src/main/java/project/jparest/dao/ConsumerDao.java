@@ -54,7 +54,6 @@ public class ConsumerDao {
 			return null;
 	}
 	
-<<<<<<< HEAD
 	
 	public ConsumerEntity changePassword(@PathVariable String email,@PathVariable String oldpwd,@PathVariable String newpwd)
 	{
@@ -64,21 +63,6 @@ public class ConsumerDao {
 		return c;
 	}
 	
-=======
-	public String addToProfile(String address,String email,int pincode,Blob picture,int mob)
-	{
-		ConsumerEntity user = repo.findByEmail(email);
-		
-		user.setAddress(address);
-		user.setPicture_profile(picture);
-		user.setPincode(pincode);
-		user.setMobile(mob);
-		repo.save(user);
-		return "added";
-	}
-
-
->>>>>>> 72cccc2951f9e1f0f61c54f820340ecfdbc6bd08
 	public ConsumerEntity changePassword(@PathVariable String email,@PathVariable String newpwd)
 	{
 		System.out.println(email+newpwd);

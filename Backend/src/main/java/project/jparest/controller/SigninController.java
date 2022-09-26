@@ -49,26 +49,6 @@ public class SigninController {
 		HomemakerEntity check = h.getCheck(email,pwd);
 		return check;
 	}
-
-	@PostMapping("changepwd/{email}/{newpwd}")
-	public Object changePass(@PathVariable String email,@PathVariable String newpwd)
-	{
-		System.out.println(email+newpwd);
-		ConsumerEntity pass = c.changePassword(email,newpwd);
-		
-		if(pass!=null)
-		{
-		return pass;
-		}
-		HomemakerEntity pwd = h.changeHomePwd(email,newpwd);
-		
-		if(pwd!=null)
-		{
-			return pwd;
-		}
-		return null;
-		
-	}
 	
 	@PostMapping("changepwd/{email}/{newpwd}")
 	public Object changePass(@PathVariable String email,@PathVariable String newpwd)
