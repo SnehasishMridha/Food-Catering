@@ -11,5 +11,6 @@ public interface ConsumerRepository extends JpaRepository<ConsumerEntity, Intege
 	
 	public ConsumerEntity findByEmail(String n);
 	
+	public ConsumerEntity findByUsername(String n);
 
 }
