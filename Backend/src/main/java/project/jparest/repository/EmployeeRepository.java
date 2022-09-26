@@ -1,4 +1,4 @@
-package project.jparest.repository;
+/*package project.jparest.repository;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,3 +10,4 @@ public interface EmployeeRepository extends JpaRepository<EmployeeEntity, Intege
 
 	public EmployeeEntity findByEmail(String n);
 }
+*/
