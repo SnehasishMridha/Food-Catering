@@ -4,6 +4,7 @@ import { useEffect,useState } from "react";
 import axios from "axios";
 import { Link, } from 'react-router-dom'
 import OrderArray from "./OrderArray";
+import CNavBar from "./CNavBar";
 //Cart Page
 const Cart = () => {
   let [arr,setArr]=useState([]);
@@ -30,6 +31,7 @@ const Cart = () => {
             console.log("out")
     return (
       <div>
+        <br/>
                     {arr.map((li,ind)=>{
                       return(
                         <OrderArray key={ind}

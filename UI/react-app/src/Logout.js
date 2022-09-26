@@ -13,7 +13,7 @@ export default function Logout()
         // if(consumer!==null)
         // {
             sessionStorage.removeItem('email');
-            sessionStorage.removeItem('password');
+           // sessionStorage.removeItem('id');
             navigate("/");
         // }
         // }else if(homemaker!==null)

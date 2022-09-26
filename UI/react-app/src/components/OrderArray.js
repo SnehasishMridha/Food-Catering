@@ -22,31 +22,33 @@ export default function OrderArray(props)
     <div>
       <div className="App">
     <section class="header">
-        <div class="navbar-area-2">
-      <li class="nav-item">
-      <h3><a class="page-scroll" href="/OrderPlaced">Place order</a></h3>
-      </li>
-   </div>
+        
       </section>
       </div>
         <div className="auth-wrapper">
         <div className="auth-inner">
+         
           <div class="row container">
             <div class="row-2">
-    <div class="column">
+     <div class="column">
+       <div class="navbar-area-2">
+      <li class="nav-item">
+      <h4 style={{float:"right"}}><a class="page-scroll" href="/OrderPlaced">Click here to place order</a></h4>
+      </li>
+   </div> 
+                 
                 <div class="card">
                   <img
                     src="assets\img\post\samosa.jpg"
                     className="card-img-top"
                     alt=""/>
                   <h4 class="card-title">{props.name}</h4>
-                  <p>Quantity:{props.quantity} gms</p>
                   <p>valid-till:{props.date}</p>
                   <p>Price:{props.price}/-</p>
                   <p>Category:{props.category}</p>
               
                   <button type="button" class="btn btn-success" value={props.order_id} onClick={(e)=>orderHandler(e.target.value)}>
-                      delete</button>
+                      Remove from cart</button>
             
                  {/*} <a
                     href="https://play.google.com/store/apps"
@@ -60,7 +62,8 @@ export default function OrderArray(props)
     </div>
     </div> </div>
   </div> </div>
-    </div>
+  </div>
+    
     );
     }
     

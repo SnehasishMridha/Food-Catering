@@ -3,7 +3,7 @@
 import { useEffect,useState } from "react";
 import axios from "axios";
 import { Link, } from 'react-router-dom'
-
+import HMNavBar from "./HMNavBar";
 // User Profile
 const Profile = () => {
  let [obj,setObj]=useState("")
@@ -24,8 +24,12 @@ const Profile = () => {
    }).catch(error => {console.log(error); alert("error occured") });
  },[])
      return (
+      <div>
+          <HMNavBar/>
+         
        <div className="auth-wrapper">
          <div className="auth-inner">
+         <center><h1>Profile</h1></center>
          <ul class="list-group">          
    <li class="list-group-item" >FirstName:{obj.firstname}</li>
    <li class="list-group-item">LastName: {obj.lastname}</li>
@@ -38,7 +42,7 @@ const Profile = () => {
  </ul>
  
  </div>
-       </div>
+       </div></div>
     
      );
      }

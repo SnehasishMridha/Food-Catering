@@ -9,8 +9,6 @@ const Forgot = () => {
     let navigate=useNavigate()
     function pwdHandler()
     {       
- 
-  
    axios.post('http://localhost:8080/signin/changepwd/'+email+'/'+pwd,{})
    .then((response) =>{
      console.log(response.data)
@@ -41,16 +39,17 @@ const Forgot = () => {
                 className="form-control"
                 placeholder="Enter your email address" onBlur={(e)=>{setEmail(e.target.value)}}
                 required
-                />
-                 <label>new password</label>
+                /><br/>
+                 <label>New password</label>
                 <input
                 type="password"
                 className="form-control"
                 placeholder="Enter your new password" onBlur={(e)=>{setPwd(e.target.value)}}
                 required
                 />
+                <br/>
                 <button type="button" className="main-btn-2 " onClick={pwdHandler}> 
-               set password
+               Set Password
                <br/>
                 </button>            
             </div><br/>

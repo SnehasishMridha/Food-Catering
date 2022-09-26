@@ -3,12 +3,11 @@ import "../App.css";
 //import { useEffect,useState } from "react";
 //import axios from "axios";
 import { Link, } from 'react-router-dom'
-import Header2 from "./Header2";
 import Services from "./Services";
 import About from "./About";
 import How from "./How";
 import Received from "./Received";
-
+import Header2 from "./Header2"
 // Home page
 const Home = () => {
     return (

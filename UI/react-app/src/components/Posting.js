@@ -5,7 +5,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link, } from 'react-router-dom'
 import HMNavBar from "./HMNavBar";
-
 //Homemaker posting
 const Posting=()=> {
     let [image,setImage] = useState("")
@@ -17,10 +16,13 @@ const Posting=()=> {
     let [quantity,setQuantity] = useState("")
     let [date,setDate] = useState()
     let navigate = useNavigate()
-  
+    
     function postHandler()
     {
-      console.log("entered in function")
+      let hid=sessionStorage.getItem("id");
+      let post={}
+      post.id=hid;   
+      console.log(hid)
       axios.post("http://localhost:8080/food/addfood", {
         image: image,
         name: name,
@@ -29,20 +31,20 @@ const Posting=()=> {
         price: price,
         unit: unit,
         qnt: quantity,
-        date: date})
+        date: date,
+        homemakerId:hid})
       //  time: time
             .then((data) =>{
              if(data.data === "added")
-             {
-              
+             {    
               console.log("added");
               navigate("/PostSuccess")
              }
              else if (data.data === "failed to add")
              {
               alert("failed");
-             }
-            
+              navigate("/Posting")
+             }          
             } ).catch(error => {console.log(error); alert("error occured")});
         }
   
@@ -126,7 +128,7 @@ const Posting=()=> {
             <div className="mb-3">
               <label>Date of Service:</label>
               <input
-                type="date"
+                type="date" 
                 className="form-control" onChange={(e)=>{setDate(e.target.value)}}
                 
               />

@@ -3,10 +3,11 @@
 //import { useEffect,useState } from "react";
 //import axios from "axios";
 import { Link, } from 'react-router-dom'
-
+import HMNavBar from './HMNavBar';
 //Post success
 const PostSuccess = () => {
   return (
+    <div><HMNavBar/>
     <div className="auth-wrapper">
       <div className="auth-inner">
         <h3>Posted Successfully</h3>
@@ -23,7 +24,7 @@ const PostSuccess = () => {
           </li>
         </div>
       </div>
-    </div>
+    </div></div>
   );
 }
 
