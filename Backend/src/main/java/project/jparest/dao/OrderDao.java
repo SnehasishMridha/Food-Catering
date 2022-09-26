@@ -1,4 +1,5 @@
 package project.jparest.dao;
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,13 +23,14 @@ public class OrderDao {
 	}
 	public String addOrder(OrderEntity order ) 
 	{
+		System.out.println(order.getConsumerId());
 		repo.save(order);
 		return "Saved";
 	}
     
-	public String delete(OrderEntity order) 
+	public String delete(int id) 
 	{
-		repo.deleteById(order.getOrder_id());
+		repo.deleteById(id);
 		return "deleted";		
 	}
 	
@@ -37,5 +39,13 @@ public class OrderDao {
 		return Optional.ofNullable(repo.findById(id).get());
 	}
 		
+	public List<OrderEntity> getOrders(int id) 
+	{
+		List<OrderEntity> order=repo.findByConsumerId(id);
+		return order;		
+	}
+	
+	
+	
 	
 }

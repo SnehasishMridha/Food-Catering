@@ -2,25 +2,28 @@ package project.jparest.controller;
 import java.sql.Blob;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.CrossOrigin;
+
 import project.jparest.dao.ConsumerDao;
-import project.jparest.dao.EmployeeDao;
 import project.jparest.dao.HomemakerDao;
+import project.jparest.entity.ConsumerEntity;
+import project.jparest.entity.HomemakerEntity;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping(path="/signin")
+@RequestMapping(path="signin")
 public class SigninController {
 
 	@Autowired
-	public ConsumerDao consumer;
+	public ConsumerDao c;
 	
-	@Autowired
-	EmployeeDao e;
+	//@Autowired
+	//EmployeeDao e;
 	
 	@Autowired
 	HomemakerDao h;
@@ -28,16 +31,17 @@ public class SigninController {
 	@PostMapping("logincon/{email}/{pwd}")
 	public ConsumerEntity getConsumer(@PathVariable String email, @PathVariable String pwd) 
 	{
-		ConsumerEntity check=consumer.getCheck(email,pwd);
+		System.out.println(email+pwd);
+		ConsumerEntity check=c.getCheck(email,pwd);
 		return check;
 	}
 	
-	@PostMapping("loginemp/{email}/{pwd}")
+	/*@PostMapping("loginemp/{email}/{pwd}")
 	public String getEmployee(@PathVariable String email, @PathVariable String pwd)
 	{
 		String check=e.getCheck(email,pwd);
 		return check;
-	}
+	}*/
 	
 	@PostMapping("loginHome/{email}/{pwd}")
 	public HomemakerEntity getHomemaker(@PathVariable String email, @PathVariable String pwd)
@@ -46,24 +50,25 @@ public class SigninController {
 		return check;
 	}
 	
-	//	@PutMapping("forgetpwdcon/{email}/{oldpwd}/{newpwd}")
-	//	public ConsumerEntity changePasswordCon(@PathVariable String email,@PathVariable String oldpwd,@PathVariable String newpwd)
-	//	{
-	//		ConsumerEntity u=consumer.changePassword(email, oldpwd, newpwd);
-	//		return u;
-	//	}
+	@PostMapping("changepwd/{email}/{newpwd}")
+	public Object changePass(@PathVariable String email,@PathVariable String newpwd)
+	{
+		System.out.println(email+newpwd+"signin");
+		ConsumerEntity pass = c.changePassword(email,newpwd);
 
-	//	@PutMapping("forgetpwdcon/{email}/{oldpwd}/{newpwd}")
-	//	public HomemakerEntity changePasswordHome(@PathVariable String email,@PathVariable String oldpwd,@PathVariable String newpwd)
-	//	{
-	//		HomemakerEntity u=h.changePassword(email, oldpwd, newpwd);
-	//		return u;
-	//	}
+		if(pass!=null)
+		{
+		return pass;
+		}
+		HomemakerEntity pwd = h.changeHomePwd(email,newpwd);
 
-	//	@PutMapping("forgetpwdEmp/{email}/{oldpwd}/{newpwd}")
-	//	public EmployeeEntity changePasswordEmp(@PathVariable String email,@PathVariable String oldpwd,@PathVariable String newpwd)
-	//	{
-	//		EmployeeEntity u=e.changePassword(email, oldpwd, newpwd);
-	//		return u;
-	//	}
+		if(pwd!=null)
+		{
+			return pwd;
+		}
+		return null;
+
+	}
+	
+	
 }

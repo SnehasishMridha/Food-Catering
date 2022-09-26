@@ -1,10 +1,10 @@
 package project.jparest.dao;
-
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import org.springframework.web.bind.annotation.PathVariable;
+import project.jparest.entity.ConsumerEntity;
 import project.jparest.entity.HomemakerEntity;
 import project.jparest.repository.HomemakerRepository;
 
@@ -32,10 +32,6 @@ public class HomemakerDao {
 		repo.deleteById(id);
 	}
 	
-	public Optional<HomemakerEntity> get(int id)
-	{
-		return Optional.ofNullable(repo.findById(id).get());
-	}
 	
 	public HomemakerEntity getCheck(String email,String pwd)
 	{
@@ -52,16 +48,17 @@ public class HomemakerDao {
 			return null;
 	}
 	
-	public String addToProfile(String address,String email,int pincode,int mob)
+	
+	
+	public HomemakerEntity changeHomePwd(@PathVariable String email,@PathVariable String newpwd)
 	{
-		HomemakerEntity h = repo.findByEmail(email);	
-		h.setAddress(address);
-		h.setPicture_profile(null);
-		h.setPincode(pincode);
-		h.setMobile(mob);
-		repo.save(h);
-		return "added";
+		HomemakerEntity h=repo.findByEmail(email);
+		if(h!=null)
+		{
+			h.setPassword(newpwd);
+			repo.save(h);
+			return h;
+		}
+		return null;
 	}
-	
-	
 }

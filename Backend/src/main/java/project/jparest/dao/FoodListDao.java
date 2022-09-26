@@ -1,12 +1,9 @@
 package project.jparest.dao;
-
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import project.jparest.entity.FoodlistEntity;
+import project.jparest.entity.OrderEntity;
 import project.jparest.repository.FoodListRepository;
 @Service
 public class FoodListDao {
@@ -23,23 +20,27 @@ public class FoodListDao {
 	public String addfood(FoodlistEntity food ) 
 	{
 		repo.save(food);
-		return "Saved";
+		return "added";
 	}
 
-	public String delete(FoodlistEntity food) 
+	public String delete(int id) 
 	{
-		repo.deleteById(food.getId());
+		repo.deleteById(id);
 		return "deleted";
 	}
 
-	public Optional<FoodlistEntity> get(int id)
+	public List<FoodlistEntity> getPosts(int id) 
 	{
-		return Optional.ofNullable(repo.findById(id).get());
+		List<FoodlistEntity> post=repo.findByHomemakerId(id);
+		System.out.println(post);
+		return post;		
 	}
 
-	public Optional<List<FoodlistEntity>> getFoodName(String name)
-	{
-		return Optional.ofNullable(repo.findByName(name));
-	}
+//	public Optional<List<FoodlistEntity>> getFoodName(String name)
+//	{
+//		return Optional.ofNullable(repo.findByName(name));
+//	}
 
+	
+	
 }
