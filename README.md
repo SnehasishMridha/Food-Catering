@@ -10,9 +10,9 @@ make orders from the active posts and available food at their location.
 
   - Backend: Spring Boot,JPA/Hibernate,MySQL.
   
-  - Frontend: HTML,CSS,Bootsrap,React.JS,JavaScript
+  - Frontend: HTML, CSS, Bootsrap, React.JS, JavaScript
   
-  - Other:Github,StarUML,draw.io
+  - Other:Github, StarUML, MySQL WorkBench
 
 #### Installation
   - Make a new folder on your machine and clone project using link https://github.com/SnehasishMridha/Food-Catering.git.
