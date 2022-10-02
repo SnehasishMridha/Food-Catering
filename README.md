@@ -27,10 +27,15 @@ make orders from the active posts and available food at their location.
      - install the required dependancies as follows.
     
       "axios": "^0.27.2",
+      
       "react": "^18.2.0",
+      
       "react-bootstrap": "^2.5.0",
+      
       "react-dom": "^18.2.0",
+      
       "react-router-dom": "^6.3.0",
+      
       "react-scripts": "5.0.1",
     
   
