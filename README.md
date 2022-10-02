@@ -3,9 +3,7 @@
 ## Home-Made Food Delivery and Take-Away 
 Home-made food delivery is a web-based application that brings in homemade food to peoples reach. Our Homemakers can make post
 of their home-made food with pictures and number of serves they can provide with at a specific location and time. Consumers can
-make orders from the active posts and available food at their location. Homemaker will also have ratings and reviews given by 
-the consumers which will keep them motivated to do better.
-
+make orders from the active posts and available food at their location.
 
  
 ### Used Technologies:
